@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery修改属性和内容</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<ul>
+    <li class="active">
+        <a href="#">列表1</a>
+    </li>
+    <li class="middle">
+        <a href="#">列表2</a>
+    </li>
+    <li class="last">
+        <a href="#">列表3</a>
+    </li>
+</ul>
+</body>
+</html>
+<script>
+    $(function(){
+        console.log($('.active a').attr('href'));//获取某个属性对应的属性值
+        $('.active a').attr('href','http://www.baidu.com');//设置某个属性的值
+        $('.active a').removeAttr('href');//将href属性删除
+        console.log($('.middle a').prop('href'));
+        $('.middle a').prop('href','http://www.baidu.com');
+
+        $('ul').addClass('box'); //添加某个class类
+        $('ul').removeClass('box');//删除class类
+        $('ul').toggleClass('test');//切换class类，有就删除，没有就添加
+
+        $('ul').html() //获取内容
+        $('ul').text() //获取文本内容
+        $('ul').val() //通常都是获取表单元素对应的value属性的.
+
+
+        $('ul').css('width','200px');
+        $('ul').css('height','300px');
+
+    })
+</script>

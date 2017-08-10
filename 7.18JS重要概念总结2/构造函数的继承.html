@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数的继承</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function animal (){
+        this.name = '';
+        this.run = function(){
+            console.log('run');
+        }
+    }
+    animal.prototype.say = function(){
+        console.log('say');
+    }
+
+    function horse(){
+        animal.call(this);//继承animal里面所有的私有属性和方法
+        this.color = 'white';
+        this.eat = function(){
+            console.log('eat');
+        }
+    }
+    /*horse.prototype = animal.prototype;
+    animal.prototype.test = '这是测试添加是否影响';*/
+
+    //让animal的原型赋值给horse的原型，而且互不影响
+   /* var f = function(){};
+    f.prototype = animal.prototype;
+    horse.prototype = new f();
+    horse.prototype.constructor = horse;
+    //animal.prototype.test = '这是测试添加是否影响';
+    var whiteHorse = new horse();
+    console.log(whiteHorse);
+    whiteHorse.say();*/
+
+   //比较简单容易记的方法.
+   var prototype = Object.create(animal.prototype);
+   horse.prototype = prototype;
+   horse.prototype.constructor = horse;
+   var whiteHorse = new horse();
+   console.log(whiteHorse);
+
+
+
+
+
+
+
+
+
+
+
+</script>

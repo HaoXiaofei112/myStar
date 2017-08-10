@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人主页</title>
+    <style>
+        *{
+            color:white;
+
+
+
+        }
+        a{
+            text-decoration: none;
+        }
+        html{
+            width:100%;
+            height: 100%;
+            background-image:url(img/bg.jpg) ;
+            /*背景图片不动*/
+            background-attachment: fixed ;
+
+        }
+        body{
+            width: 70%;
+            margin:0 auto;
+
+        }
+
+        nav{
+
+            width: 100%;
+            height: 90px;
+            margin:50px auto ;
+
+        }
+        .ste {
+            width:90px;
+            height:90px;
+            float:left;
+        }
+        .ste img{
+            width:100%;
+            height:100% ;
+
+        }
+        ul{
+            list-style: none;
+            margin: 0 ;
+            padding: 0;
+            float: right;
+            overflow: hidden;
+        }
+        li{
+            width:70px;
+            height:70px;
+            margin:10px 30px 10px 10px  ;
+            float: left;
+            font-size: 20px;
+            line-height:90px;
+            text-align: center;
+            padding-bottom: 6px;
+        }
+        li:hover{
+            width:70px;
+            height:70px;
+            color:black;
+            border:1px solid white;
+
+        }
+        .clear{
+            clear:both;
+        }
+        span{
+            border-bottom:1px dashed white ;
+            padding-bottom:2px;
+        }
+        span:hover{
+            border-bottom:1px solid white ;
+            padding-bottom:2px;
+
+        }
+        .moduel{
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+        .moduel div {
+            width:160px;
+            height:45px;
+            background-color:mediumpurple ;
+            text-align: center;
+            line-height: 45px;
+            margin-right:20px;
+            margin-top: 10px;
+
+        }
+        .moduel div:hover{
+            background-color:mediumpurple ;
+            background:rgba(147,112,219,0.6) ;
+        }
+
+        .project{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+
+        .project  img{
+            width:350px;
+            height:230px;
+            margin-bottom: 15px;
+            filter:  grayscale(0.8);
+
+       }
+        .project img:hover{
+            filter:  grayscale(0);
+
+        }
+
+        .project p{
+            position: relative;
+
+            top:-160px;
+            left: 140px;
+            color: rgba(0,0,0,0.01);
+        }
+        .project p:hover{
+            color: rgba(123,454,999,0.9);
+        }
+        .qq{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .qq :nth-of-type(2n+1){
+           padding:0 14px 0 14px;
+            height: 30px;
+            background-color: white;
+            color:black;
+            line-height:30px ;
+            text-align:center ;
+            margin-right: 10px;
+        }
+        .qq :nth-of-type(2n){
+            padding:0 14px 0 14px;
+            height: 30px;
+            background-color: black;
+            line-height:30px ;
+            text-align:center ;
+            margin-right: 30px;
+        }
+        .input input{
+            width:30%;
+            background-color: white;
+            color:grey;
+            border: none;
+            height:25px;
+        }
+        .input select{
+            width:30%;
+            height:25px;
+        }
+        option{
+            color:black;
+        }
+        .leave{
+            margin-top: 20px;
+        }
+        textarea{
+            color:grey;
+
+        }
+        button{
+            width:40%;
+            height:40px;
+            background-color: cornflowerblue;
+            border: none;
+            padding-top: 20px;
+
+
+
+        }
+        .footer{
+            margin-top: 40px;
+            margin-bottom: 40px;
+
+        }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<nav>
+    <div class="ste"><img src="img/steemit.svg" alt=""> </div>
+    <div >
+        <ul>
+           <li > <a href="#hao">关于</a></li>
+            <li ><a href="#a1">工作</a></li>
+            <li ><a href="#a2">联系</a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</nav>
+<main>
+    <a id="hao"></a>
+    <h1>大家好，我是郝晓飞。</h1>
+    <p>我是一个前端迷，喜欢探索，喜欢研究，对一切未知而又充满质感的事物充满好奇心，永远保持一颗童心。</p>
+    <p>青年教师一枚，执着于前端技术。html5、css3、javascript、jquery、vue.js、angularjs、babel、sass、markdown、git等等都是我的最爱！！</p>
+    <p>来吧，让我们一起来畅游前端的世界。 <span >模仿实现</span>，但适度创意！！</p>
+    <h1>我的兴趣</h1>
+     <div class="moduel" title="habi">
+         <div>RWD</div>
+         <div>Flexbox</div>
+         <div>Sass</div>
+         <div>Less</div>
+         <div>Autoprefix</div>
+         <div>Grid</div>
+         <div>iHover</div>
+         <div>Animate.css</div>
+     </div>
+    <a id="a1"></a>
+    <h1>项目事例</h1>
+    <div class="project">
+
+        <div> <img src="img/office.jpg" alt=""><p>代表项目</p></div>
+        <div> <img src="img/office.jpg" alt=""><p>代表项目</p></div>
+        <div> <img src="img/office.jpg" alt=""><p>代表项目</p></div>
+        <div> <img src="img/office.jpg" alt=""><p>代表项目</p></div>
+        <div> <img src="img/office.jpg" alt=""><p>代表项目</p></div>
+        <div> <img src="img/office.jpg" alt=""><p>代表项目</p></div>
+    </div>
+    <a id="a2"></a>
+    <h1 >联系我们</h1>
+    <p>前端技术发展非常迅速，个人视野有限，希望大家可以通过广泛的交流互动，实现共同提高！！期待您的回复！！</p>
+    <div class="qq">
+        <p >邮箱</p>
+        <p>1014492804@qq.com</p>
+        <p>QQ</p>
+        <p>1014492804</p>
+    </div>
+    <div class="input">
+        <input type="text" placeholder="姓名" >
+        <input type="text"placeholder="邮箱" >
+        <select name="cars"  >
+            <option value="qq" >兴趣</option>
+            <option value="aa" selected>网页开发</option>
+            <option value="ss">应用开发</option>
+            <option value="dd">html5开发</option>
+            <option value="ff" >微信开发</option>
+        </select>
+    </div>
+    <div class="leave" >
+        <textarea rows="1" cols="30">留言 </textarea>
+        <button>提交信息</button>
+    </div>
+</main>
+<p class="footer">© 郝晓飞版权所有，如有雷同，举报有奖，非常感谢！</p>
+<!--position: fixed  相对屏幕定位-->
+<a href="" style="position: fixed;bottom:200px;right: 20px;">返回顶部</a>
+</body>
+</html>

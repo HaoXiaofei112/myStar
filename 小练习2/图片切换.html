@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        ul,li{
+            list-style: none;
+        }
+        #img{
+            width:500px;
+            height: 170px;
+
+            height: auto;
+            border: 1px solid black;
+            margin: 0 auto;
+           position:relative;
+
+
+        }
+
+        #img img{
+            /*display: none;*/
+            padding: 4px;
+
+        }
+       ul{
+           top:140px;
+           left: 310px;
+           position: absolute;
+       }
+
+        li{
+            float: left;
+            width:20px;
+            height: 20px;
+            border-radius: 50px;
+            /*background: orange;*/
+              margin: 5px;
+            text-align: center;
+
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="img">
+        <img src="img/01.jpg" alt="">
+
+   <ul>
+       <li>1</li>
+       <li>2</li>
+       <li>3</li>
+       <li>4</li>
+       <li>5</li>
+   </ul>
+    </div>
+</body>
+</html>
+<script>
+   window.onload = function () {
+       var img = document.querySelector('img');
+       var li = document.querySelectorAll('li');
+       var time = setInterval(updatetime,1000);
+     var j = 0;
+       var turn = false;
+       var i;
+       var x;
+       var y
+       var m;
+
+
+//       for(var i =0; i<li.length;i++) {
+//           li[i].index = i;
+//           li[i].onmouseover = function () {
+//               for (var i = 0; i < li.length; i++) {
+//                   img[i].style.display = 'none';
+//               }
+//               img[this.index].style.display = 'block';
+//
+//           }
+//       }
+       x=11;
+       y="number";
+       m=x+y;
+       confirm(m)
+       console.log(m);
+           function updatetime() {
+
+
+               if (j < 4) {
+                   j++;
+                   img.src = 'img/0' + (j + 1) + '.jpg';
+               } else {
+
+                   img.src = 'img/01.jpg';
+                   j = 0;
+
+               }
+              i=j;
+               i++;
+               console.log(i)
+               li[i].index = i
+
+               for (i=i ;i <5 ; i++) {
+                   for ( i=i ; i < 5; i++) {
+//                       i = i - 1;
+                       li[i].style.background = 'none';
+                   }
+                   li[this.index].style.background = 'yellow';
+                   console.log( li[this.index])
+               }
+
+
+
+
+
+
+
+           }
+       li.onmouseover = function () {
+           if (turn == false) {
+               clearInterval(time);
+               time = null;
+               turn = true;
+           } else {
+               time = setInterval(updatetime, 1000)
+               turn = false;
+           }
+       }
+
+
+
+
+
+
+
+
+
+
+   }
+
+</script>

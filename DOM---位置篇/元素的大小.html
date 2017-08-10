@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>元素的大小</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding:0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        section{
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid red;
+            background-color: red;
+            color: white;
+            line-height: 500px;
+            text-align: center;
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+<section></section>
+</body>
+</html>
+<script>
+    var section = document.querySelector('section')
+//可视内容的大小
+    console.log(section.clientWidth);//content + padding
+    console.log(section.clientHeight);//content + padding
+//元素的大小
+    console.log(section.offsetHeight);//content + padding + border
+    console.log(section.offsetWidth);//content + padding + border
+//当有滚动条时为实际内容的大小。没滚动条时为可视内容的大小
+    console.log(section.scrollWidth);//content + padding + border +scrollLeft
+    console.log(section.scrollHeight);//content + padding + border+scrollTop
+
+</script>

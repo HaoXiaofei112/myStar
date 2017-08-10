@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用的鼠标事件</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        section {
+            width:300px;
+            height:300px;
+            border:1px solid #000;
+            background:red;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+<section></section>
+</body>
+</html>
+<script>
+    var section = document.querySelector('section');
+    /*section.onclick = function(){
+        alert('我被点击了');
+    }*/
+    /*section.ondblclick = function(){
+        alert('我被双击了');
+    }*/
+    /*section.onmousemove = function(){
+     alert('注意看，我在移动！');
+     }*/
+    /*section.onmouseover = function(){
+        alert('我来了');
+    }
+    section.onmouseout = function(){
+        alert('我又走了');
+    }*/
+    /*section.onmousedown = function(){
+        alert('我被按下了');
+    }
+    section.onmouseup = function(){
+        alert('我被松开了');
+    }*/
+    section.onmouseenter = function(){
+        alert('我来了');
+    }
+    section.onmouseleave = function(){
+        alert('我又走了');
+    }
+
+
+
+
+</script>

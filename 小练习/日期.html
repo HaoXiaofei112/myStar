@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            font-size:16px;
+            font-family: "Microsoft Yi Baiti";
+        }
+        ul,ol,dl,li{
+            list-style: none;
+        }
+        a,a:hover{
+            text-decoration: none;
+        }
+        #body{
+            width:300px;
+
+            margin: 20px auto;
+            background: gray;
+            padding: 10px;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+        }
+
+       ul li div{
+           width:65px;
+           height: 50px;
+           background: #000;
+           color: white;
+           text-align: center;
+           margin-top:10px;
+       }
+        #box{
+            margin: 10px auto;
+            width:270px;
+            height: 100px;
+            background: #eee;
+            border:1px solid white;
+        }
+
+    </style>
+</head>
+<body>
+<div id="body">
+    <ul>
+        <li>
+            <div>
+                <p>1</p>
+                <p>JAN</p>
+           </div>
+        </li>
+        <li>
+            <div>
+                <p>2</p>
+                <p>FER</p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p>3</p>
+                <p>MAR</p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p>4</p>
+                <p>APR</p>
+            </div>
+        </li>
+        <li>
+           <div>
+            <p>5</p>
+            <p>MAY</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p>6</p>
+            <p>JUN</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p>7</p>
+            <p>JUL</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p>8</p>
+            <p>AUG</p>
+          </div>
+       </li>
+        <li>
+              <div>
+                <p>9</p>
+                <p>SEP</p>
+              </div>
+       </li>
+        <li>
+            <div>
+            <p>10</p>
+            <p>OCT</p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p>11</p>
+                <p>NOV</p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p>12</p>
+                <p>DEC</p>
+            </div>
+        </li>
+    </ul>
+    <div id="box"></div>
+</div>
+</body>
+</html>
+<script>
+    window.onload = function () {
+       var div = document.querySelector('#box')
+        var jan = document.querySelector('ul li div:nth-of-type(1)');
+        var fer = document.querySelector('ul li div:nth-of-type(2)');
+        var mar = document.querySelector('ul li div:nth-of-type(3)');
+        var apr = document.querySelector('ul li div:nth-of-type(4)');
+        var may = document.querySelector('ul li div:nth-of-type(5)');
+        var jun = document.querySelector('ul li div:nth-of-type(6)');
+        var jul = document.querySelector('ul li div:nth-of-type(7)');
+        var aug = document.querySelector('ul li div:nth-of-type(8)');
+        var sep = document.querySelector('ul li div:nth-of-type(9)');
+        var oct = document.querySelector('ul li div:nth-of-type(10)');
+        var nov = document.querySelector('ul li div:nth-of-type(11)');
+        var dec = document.querySelector('ul li div:nth-of-type(12)');
+//
+        jan.onmouseover = function(){
+            jan.style.background =' white';
+            jan.style.color ='red';
+            //div.style.
+        }
+        fer.onmouseover = function(){
+            fer.style.background =' white';
+            fer.style.color ='red';
+            //div.style.
+        }
+        mar.onmouseover = function(){
+            mar.style.background =' white';
+            mar.style.color ='red';
+            //div.style.
+        }
+
+
+    }
+</script>

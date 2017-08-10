@@ -1,0 +1,153 @@
+/*整体样式，清除浏览器自带的一些属性，比如内外边距，下划线，特殊符号等*/
+
+*{
+    //
+   box-sizing: border-box;
+}
+.clearfix{
+    /*第一种形式。直接空DIV清除浮动。缺点，多了个DIV
+    第二种形式，伪类形式清楚
+    第三种形式兼容所有浏览器   overflow:hidden;   zoom:1; */
+    /*clear:both;*/
+    /*保证所有浏览器都兼容*/
+    /*overflow: hidden;*/
+    /*zoom:1;*/
+    content: "";
+    display: table;
+    clear: both;
+}
+ul{
+    paddong:0;
+    list-style:none ;
+}
+a{
+    text-decoration: none;
+    /*color:#ffff00; */
+    /*color:rgb(0,0,255);*/
+    /*color:rgba(255,255,0,.5)*/
+    color:#fff;
+}
+body{
+
+    background: url(img/bg.jpg) center top fixed;
+    min-height:1200px;
+    color:#fff;
+}
+.wrapper{
+    max-width:1200px;
+    padding:20px;
+    margin: auto;
+    /*margin:0 0 0 10px;*/
+    /*margin:0 10px 0;*/
+
+}
+header{
+    position: relative;
+    margin: 30px 0;
+
+}
+ .logo img{
+    width:80px;
+     height:auto;
+
+}
+
+
+ .mainNav{
+     /*绝对定位。相对于离他最近的有的定位属性的父元素为参考点*/
+     position: absolute;
+     top:0;
+     right:0;
+ }
+ .mainNav ul li{
+     float:left;
+     margin:20px 30px;
+
+ }
+.mainNav ul li a{
+    padding:20px;
+    border: 1px solid transparent;
+    transition: color .5s,border 2s;
+}
+.mainNav ul li a:hover{
+    color:black;
+    border: 1px solid #fff;
+
+}
+header h2{
+    margin: 50px 0;
+    font-size:30px;
+}
+p a{
+    border-bottom: 1px dashed #fff;
+    border-bottom:4px ;
+    transition: border 0.5s;
+
+}
+p a:hover{
+    border-bottom: 1px solid #fff;
+}
+section.favContainer h2{
+    margin-bottom: 0px;
+}
+.fav li{
+    float:left;
+    width:160px;
+    height:48px;
+    text-align: center;
+    line-height: 48px;
+    background-color: rgba(100,100,200,0.5);
+    margin:10px 20px 0 0;
+    cursor:pointer;
+    border-radius: 5px;
+    transition: background .5s;
+}
+.fav li:hover{
+    background-color: rgba(100,100,200,0.8);
+}
+.work {
+    padding:0px;
+    margin:0px;
+}
+.work figure{
+    width:30%;
+    float:left;
+    margin:calc(10% / 6)calc(10% /2) 0 0;
+    position: relative;
+}
+.work figure:nth-child(3n){
+    margin-right: 0px;
+}
+.work figure img {
+    -webkit-filter: grayscale(0);
+}
+.work figure img{
+    width:100%;
+    height:auto;
+}
+.work figure:hover img{
+    -webkit-filter: grayscale(0.5);
+}
+work figure figcaption{
+    width:100px;
+    height:30px;
+    position: absolute;
+    left: calc(50% - 50px) ;
+    top:calc(50% - 15px);
+    text-align: center;
+    z-index: 3;
+    opacity: 0;
+
+}
+.work figure:hover figcaption{
+    opacity: 1;
+}
+.contactContainer dl dt{
+    display: inline-block;
+    padding: 5px 20px;
+  color:#fff;
+    background-color: #fff;
+
+}
+
+

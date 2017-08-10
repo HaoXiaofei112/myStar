@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单拖拽</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0; 
+        }
+        div {
+            width:200px;
+            height:200px;
+            position:absolute;
+            top:0px;
+            left:0px;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        var div = document.querySelector('div');
+        var nodrag = false;
+        div.onmousedown = function(event){
+            var clientX = event.clientX;//鼠标针对视图的坐标
+            var clientY = event.clientY;
+            var diffX = clientX - div.offsetLeft;
+            var diffY = clientY - div.offsetTop;
+            nodrag = false;
+            div.onmousemove = function(event){
+                //1.你要获取到的鼠标的坐标
+                if(nodrag == true) return;
+                var left = event.clientX - diffX;
+                var top = event.clientY - diffY;
+                var maxLeft = document.documentElement.clientWidth - div.offsetWidth;
+                var maxTop = document.documentElement.clientHeight - div.offsetHeight;
+                if(left < 0){
+                    left = 0;
+                }else if(left > maxLeft){
+                    left = maxLeft;
+                }
+                if(top < 0){
+                    top = 0;
+                }else if(top > maxTop){
+                    top = maxTop;
+                }
+                div.style.left = left + 'px';
+                div.style.top = top + 'px';
+
+                //2.获取当前盒子以左上角为参考点的针对视图的偏移量
+                //3.根据当前的鼠标偏移量，来改变div的left/top值
+                //你可以扩展性的考虑几个问题
+                //1.div的拖动它应该在视图的范围内拖动
+                //2.你可以考虑加上滚动条的情况
+                //3.根据文档居中，而不仅仅是视图
+            }
+        }
+        div.onmouseup = function(){
+            //你要清除掉鼠标的移动事件
+            nodrag = true;
+        }
+    }
+</script>

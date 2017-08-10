@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var num = new Number(); //创建一个整数类型
+    //console.dir(Number);//打印一下number构造函数
+    var str = new String();//创建一个字符串类型
+    console.dir(String);
+    //构造函数 Number,String,Boolean,Array,Function,Date,Error,Regex...
+    //JS数据类型实际也是通过对应的构造函数实例化创建出来的.
+    var arr = new Array();//创建一个数组
+    var Arrays = Array.prototype;//数组的方法全部放在数组构造函数的原型里面.
+    console.log(Arrays);
+    //任何数据都可以通过new 数据类型的构造函数实例化出来，并且内置数据类型的方法
+    //统一都放在prototype属性中。也就是原型里面.
+    //这就是为什么，我们在操作某个数据类型的时候，可以调用很多方法。
+    var arr2 = [1,2,3,4];
+    arr2.length; //数组的长度
+    arr2.forEach(function(){}) //原型里面的方法
+    arr2.sort()   //原型里面的方法
+
+    //访问数组原型的原型
+    arr2.__proto__.__proto__ //访问它原型的原型,object
+    //JS一切皆对象，所有的数据结构都是从对象继承(扩展)过来的.每个对象都有__proto__
+    //属性，就像一个链条一样，组成了原型的链式结构.
+
+     /*            prototype              prototype
+        [1,2,3,4]    ---->    数组的方法    ------>  对象的方法 */
+
+    //原型链跟变量的作用域是一样的，找方法和属性的时候，先从自身开始找，如果找不到
+    //跑去原型去找，如果原型上也没有，那么就去原型的原型上去找.
+
+    function test(){
+        //this.name = '李志远'; //先从自身的属性和方法去寻找
+    }
+    test.prototype.name = 'lzy'; //如果找不到，就去原型对象中去寻找.
+
+    var obj = new test();
+    console.log(obj.name);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

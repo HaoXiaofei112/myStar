@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery大小</title>
+    <script src="jquery.js"></script>
+    <style>
+        .scrollTop {
+            position:fixed;
+            bottom:0;
+            right:0;
+            width:100px;
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            background:red;
+            color:#fff;
+        }
+        .scrollBottom {
+            position:fixed;
+            top:0;
+            right:0;
+            width:100px;
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            background:red;
+            color:white;
+        }
+    </style>
+</head>
+<body style="height:2000px;">
+<div class="scrollBottom">回到底部</div>
+<div style="width:200px;height:200px;border:1px solid #ccc;padding:10px"></div>
+<div class="scrollTop">回到顶部</div>
+</body>
+</html>
+<script>
+    $(function(){
+        $('div').width(); // content 获取到宽度
+        $('div').height();//content 获取到高度
+        $('div').outerWidth();//content + padding + border
+        $('div').outerHeight();//content + padding + border
+        $('div').innerWidth(); //content + padding
+        $('div').innerHeight();//content + padding
+        console.log($('div').offset().left);//针对视图的偏移量
+        console.log($('div').position()) //针对父元素的偏移量
+
+        $('.scrollTop').click(function(){
+            $(document).scrollTop(0);
+        })
+        $('.scrollBottom').click(function(){
+            $(document).scrollTop($('body').height());
+        })
+    })
+</script>

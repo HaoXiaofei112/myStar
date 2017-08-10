@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>世界末日</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: red;
+        }
+        #container {
+            text-align: center;
+            width: 500px;
+            height: 200px;
+            line-height: 50px;
+            margin: 200px auto;
+            color: black;
+            font-size: 20px;
+            padding: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <p>世界末日到了，接受审判吧，愚蠢的人类！！！</p>
+    倒计时：
+    <span>01</span>天
+    <span>00</span>时
+    <span>00</span>分
+    <span>00</span>秒
+</div>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        var time = setInterval(updatetime, 1000);
+        var span = document.querySelectorAll('span');
+        function updatetime() {
+            var allTime = span[0].innerHTML.replace(/^0/, '') * 60 * 60 * 24 + +span[1].innerHTML.replace(/^0/, '')
+                * 60 * 60 + +span[2].innerHTML.replace(/^0/, '') * 60 + +span[3].innerHTML.replace(/^0/, '');
+            allTime--;
+            if (allTime < 1) {
+                clearInterval(time);
+            }
+            span[0].innerHTML = parseInt(allTime / 24 / 60 / 60)< 10 ? '0' + parseInt(allTime / 24 / 60 / 60) : parseInt(allTime / 24 / 60 / 60);
+            span[1].innerHTML = parseInt(allTime / 60 / 60 % 24) < 10 ? '0' + parseInt(allTime / 60 / 60 % 24) : parseInt(allTime / 60 / 60 % 24);
+            span[2].innerHTML = parseInt(allTime / 60 % 60) < 10 ? '0' + parseInt(allTime / 60 % 60) : parseInt(allTime / 60 % 60);
+            span[3].innerHTML = parseInt(allTime % 60) < 10 ? '0' + parseInt(allTime % 60) : parseInt(allTime % 60);
+            console.log(span[0].innerHTML);
+        }
+    }
+</script>

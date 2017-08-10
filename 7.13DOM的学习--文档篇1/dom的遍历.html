@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM元素的遍历</title>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">我的首页</a></li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">产品信息</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <a href="#">我是链接</a>
+        <p id="a">我的内容</p>
+        <input type="text" value="">
+    </main>
+    <footer>
+        <p class="b">DOM的选择实例</p>
+    </footer>
+</div>
+</body>
+</html>
+<script>
+    //寻找上级元素
+    var ul = document.querySelector('ul');
+    var target = ul.parentNode; //找到上级元素.父级元素
+    var target = ul.parentNode.parentNode; //父级的父级
+    var target = ul.parentNode.parentNode.parentNode //父级的父级的父级
+    //console.log(target);
+
+    //寻找下级元素
+    var ul = document.querySelector('ul');
+    var li = ul.children;
+    var firstLi = ul.firstChild; //子节点中第一个li
+    var lastLi = ul.lastChild; //子节点中最后一个li
+    //console.log(li);
+
+    //寻找相邻的元素
+    var a = document.querySelector('#a');
+    var prevA = a.previousElementSibling; //相邻的上一个
+    console.log(prevA);
+    var nextInput = a.nextElementSibling; //相邻的下一个
+    console.log(nextInput);
+
+    var ul = document.querySelector('ul');
+    console.log(ul.nodeName) //节点名称
+    console.log(ul.nodeType) //节点类型
+    console.log(ul.nodeValue) //节点的值
+
+
+
+
+
+
+
+
+
+
+
+</script>

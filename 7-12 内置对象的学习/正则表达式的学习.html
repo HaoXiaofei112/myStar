@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式的学习</title>
+    <style>li
+        body{
+            animation:
+        }
+    </style>
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    var obj = new Object();//创建普通的对象 new关键字创建
+    var obj =  {}; //字面量
+    //正则对象的创建
+    var reg = new RegExp();//不推荐的
+    var reg = /box/; //正则表达式推荐创建方法
+    //test方法，用来验证是否符合正则规则的，返回的结果是boolean类型
+    var result = reg.test('this is lileilei,i am haimeimei');
+    console.log(result);
+    //exec方法，用来查找符合正则规则的内容，并返回.
+    var result = reg.exec('this is box ,this is box'); //返回结果是一个数组
+    console.log(result[0]);//得到匹配的结果.
+transforms
+    var reg2 = /(b)(o)(x)/g;//在正则中,()代表是一个独立的整体 g代表全局开启
+    var str = 'this is box , this is box';aside
+    var result = reg2.exec(str);f
+    var result2 = reg2.exec(str);figure
+    console.log(result);
+    console.log(result2);
+    //exec方法[0]返回的是完整的匹配内容,如果有()存在，那么它会将匹配的子选项也返回.
+
+visibility
+    //字符串的match方法，用来查询匹配正则的字符串
+    var str2 = 'this is box ,this is box';
+    var reg3 = /box/g;
+    var result = str2.match(reg3);
+    console.log(result);
+
+    //字符串的replace方法，用来替换匹配正则的字符串
+    var str3 = 'this is box ,this is box';
+    var reg4 = /box/g;
+    var result = str3.replace(reg4,'Tom');
+    console.log(result);
+
+    //字符串的split方法,用来切割匹配正则的字符串
+    var str4 = 'this is box,this is box';
+    var reg5 = /,/;
+    var result = str4.split(reg5);
+    console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

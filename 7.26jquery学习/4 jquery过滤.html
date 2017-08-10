@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery过滤</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<ul>
+    <li class="active">
+        <a href="#">链接1</a>
+        <span>内容1</span>
+    </li>
+    <li>
+        <a href="#">链接2</a>
+        <span>内容2</span>
+    </li>
+    <li>
+        <a href="#">链接3</a>
+        <span>内容3</span>
+    </li>
+</ul>
+</body>
+</html>
+<script>
+    $(function(){
+        //console.log($('li').eq(0))//第一个li元素
+        //console.log($('li').eq(1)) //第二个li元素
+        //console.log($('li').eq(2)) //第三个li元素
+        /*for(var i=0;i<li.length;i++){
+            li[i].index = i;
+        }*/
+        //console.log($('li').eq(0).hasClass('active')) //第一个li元素是否有active的class类
+        //console.log($('li').filter('.active'));//过滤出带有.active的li
+        //console.log($('li').filter($('li.active')));
+        var result = $('li').filter(function(){
+            return $(this).hasClass('active');
+        })
+        //console.log(result);
+
+        //console.log($('li').is('.active'));//判断li中是否包含.active
+
+        //遍历集合li,并进行函数内的操作
+        $('li').map(function(index){
+            //console.log(index);
+            //console.log(this);
+            this.innerHTML += '我是新增的内容';
+        })
+
+        $('li').has('.active') //过滤出包含条件的li
+        $('li').not('.active') //删除指定条件的li
+        $('li').slice(1) //获取到第二个li以后的li集合
+
+
+
+
+
+
+
+
+
+
+
+    })
+</script>

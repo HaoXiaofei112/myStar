@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时的效果</title>
+</head>
+<body>
+<button>清除定时效果</button>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        var time = setInterval(function(){
+            console.log(1)
+
+        },1000)
+        var button = document.querySelector('button');
+        var turn = false;
+        button.onclick = function(){
+            if(turn == false){
+                clearInterval(time);
+                time = null;
+                turn = true;
+            }else{
+                time = setInterval(function(){
+                    console.log(1);
+                },1000)
+                turn = false;
+            }
+        }
+    }
+</script>

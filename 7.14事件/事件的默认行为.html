@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的默认行为</title>
+</head>
+<body>
+<a href="http://www.baidu.com">跳转到百度</a>
+<form action="/" method="post">
+    <input type="text" value="用户名">
+    <input type="text" value="密码">
+    <select>
+        <option value="1">苹果</option>
+        <option value="2">香蕉</option>
+        <option value="3">西瓜</option>
+    </select>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
+<script>
+    var a = document.querySelector('a');
+    //a.onclick = function(){}
+    a.addEventListener('click',function(event){
+        event.preventDefault();//它可以用来阻止事件的默认行为
+    })
+    var select = document.querySelector('select');
+    select.addEventListener('change',function(event){
+        console.log(event.target);
+        event.preventDefault();//它不是一个默认行为
+    })
+    var sub = document.querySelector('input[type=submit]');
+    sub.addEventListener('click',function(event){
+        event.preventDefault();//阻止表单的默认提交行为
+    })
+
+
+
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡tab切换效果</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        #container {
+            width:450px;
+            margin:20px auto;
+        }
+        #nav {
+            list-style: none;
+            overflow:hidden;
+            zoom:1;
+            background:#000;
+            border:1px solid #000;
+        }
+        #nav li {
+            float:left;
+            color:#fff;
+            height:30px;
+            line-height:30px;
+            cursor: pointer;
+            padding:0 20px;
+        }
+        #nav li.active {
+            color:#000;
+            background:#ccc;
+        }
+        #list {
+            border:1px solid #000;
+            border-top:none;
+        }
+        #list ul {
+            line-height:30px;
+            margin:0 30px;
+            padding:10px 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="nav">
+        <li class="">第一课</li>
+        <li class="">第二课</li>
+        <li class="">第三课</li>
+    </ul>
+    <div id="list">
+        <ul>
+            <li>网页特效原理分析</li>
+            <li>响应用户操作</li>
+        </ul>
+        <ul>
+            <li>改变网页背景颜色</li>
+            <li>函数传参</li>
+        </ul>
+        <ul>
+            <li>程序调试方法</li>
+            <li>javascript权威指南</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        var navLi = document.querySelectorAll('#nav li');
+        var listUl = document.querySelectorAll('#list ul');
+        navLi[0].className = 'active';
+        listUl[0].style.display = 'block';
+        for(var i=0;i<navLi.length;i++){
+            navLi[i].index = i;//保存下下标值
+            navLi[i].onmouseover = function(){
+                for(var i=0;i<navLi.length;i++){
+                    navLi[i].className = '';
+                    listUl[i].style.display = 'none';
+                }
+                navLi[this.index].className = 'active';
+                listUl[this.index].style.display = 'block';
+            }
+        }
+    }
+</script>

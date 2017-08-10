@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery添加、删除、替换</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<ul>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+</ul>
+</body>
+</html>
+<script>
+    $(function(){
+        //$('ul').append('<li>我是新追加的li元素</li>')//向内部追加新元素
+        //$('<li>新追加的li元素</li>').appendTo('ul');//相反的元素追加到ul里面.
+        //$('ul').prepend('<li>新追加的元素</li>');//向内部前端添加新元素
+        //$('<li>新追加的元素</li>').prependTo('ul')
+
+        //$('ul').after('<p>我是段落</p>') //外部后边添加
+        $('<p>我是段落</p>').insertAfter('ul');
+        //$('ul').before('<p>我是段落</p>') //外部前边添加
+        $('<p>我是段落</p>').insertBefore('ul');
+
+        $('ul').wrap('<div class="wrap"></div>'); //在ul的外层包裹一层div
+        $('ul').unwrap();//去掉外层包裹的元素
+        $('li').wrapAll('<div></div>');//将所有的元素外层都包裹一层div
+
+        $('p').wrapInner('<div></div>');//元素子元素内部包裹.
+        $('p').replaceWith('<b>替换了</b>');//将所有的p标签替换成b标签.
+        $('<b>又一次替换</b>').replaceAll('b'); //只能传递标签名
+
+        //$('b').empty() //将b标签里面所有的内容全部清除掉
+        //$('b').remove();//删除,元素上所有的事件都会被删掉
+        $('b').detach();//删除，元素上事件和数据都会保留
+
+
+
+
+
+
+
+
+
+
+
+
+    })
+</script>

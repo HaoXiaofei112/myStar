@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom元素的属性和内容修改</title>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">我的首页</a></li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">产品信息</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p id="a">我的内容</p>
+        <form action="" method="post">
+            <label>用户:</label>
+            <input type="text" value="">
+            <label>密码:</label>
+            <input type="password" value="">
+            <input type="submit" value="提交">
+        </form>
+    </main>
+    <footer>
+        <p class="b">DOM的选择实例</p>
+    </footer>
+</div>
+</body>
+</html>
+<script>
+    var form = document.querySelector('form');
+    //1.直接通过.属性名来完成修改
+    //它只能用来修改行内的属性,并且修改后的结果添加到行内.
+    //form.action = '/user';
+
+    //2.setAttribute修改属性
+    form.setAttribute('action','/user') //修改的属性值，修改的内容
+    form.setAttribute('method','get')
+    form.getAttribute('method'); //获取属性对应的值
+    form.getAttribute('action');
+
+    //3.通过元素的Attributes属性也可以获取
+    console.log(form.attributes) //获取这个元素上所有的属性的集合.
+
+    //4.修改元素的CSS样式的时候，需要使用style和getComputeStyle
+    //form.setAttribute('width',200);
+    //form.setAttribute('height',500);
+
+    form.style.width = 200 + 'px'; //设置元素行内样式的方法
+    form.style.height = 500 + 'px';
+    getComputedStyle(form)['width'] //获取元素行内样式的方法
+    getComputedStyle(form)['height']
+
+    //内容修改
+    var p = document.querySelector('.b');
+    p.innerHTML = '修改后的内容'; //可以带HTML标签
+    p.textContent = '修改后的文本内容'; //只能写文本格式
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

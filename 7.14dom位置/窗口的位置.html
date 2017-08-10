@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>窗口的位置</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //窗口的位置
+    var screenLeft = window.screenLeft //获取窗口的左偏移量
+    var screenTop = window.screenTop //获取窗口的上偏移量
+    console.log(screenLeft);
+    console.log(screenTop);
+    //firefox支持的获取窗口位置
+    console.log(window.screenX);
+    console.log(window.screenY);
+
+    var leftX = screenLeft ? screenLeft : screenX
+    var leftY = screenTop ? screenTop : screenY
+
+
+
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        ul,ol,dl,li {
+            list-style: none;
+        }
+        body {
+            background:#000;
+        }
+        #container {
+            width:220px;
+            margin:0 auto;
+        }
+        #container ul {
+            padding:10px;
+            background:white;
+        }
+        #container ul li {
+            float:left;
+            width:50px;
+            height:50px;
+        }
+        #container ul li:first-child {
+            width:150px;
+            height:150px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul>
+        <li><img src="./img/big_1.jpg"></li>
+        <li><img src="./img/small_1.jpg"></li>
+        <li><img src="./img/small_2.jpg"></li>
+        <li><img src="./img/small_3.jpg"></li>
+        <li><img src="./img/small_4.jpg"></li>
+        <li><img src="./img/small_5.jpg"></li>
+        <li><img src="./img/small_6.jpg"></li>
+        <li><img src="./img/small_7.jpg"></li>
+        <li><img src="./img/small_8.jpg"></li>
+        <li><img src="./img/small_9.jpg"></li>
+        <li><img src="./img/small_10.jpg"></li>
+        <li><img src="./img/small_11.jpg"></li>
+        <div style="clear: both"></div>
+    </ul>
+</div>
+
+</body>
+</html>
+<script>
+    window.onload = function(){
+        //1.选中需要操作的元素
+        var allImg = document.querySelectorAll('img');
+        var targetImg = allImg[0];
+        for(var i=1;i<allImg.length;i++){
+            allImg[i].onmouseover = function(){
+                targetImg.src = this.src.replace(/small/,'big');
+            }
+        }
+    }
+</script>

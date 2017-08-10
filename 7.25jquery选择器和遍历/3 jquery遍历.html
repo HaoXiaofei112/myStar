@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery遍历</title>
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="demo">
+    <ul>
+        <li class="active">
+            <a class="targetA" href="#">1</a>
+            <span class="targetSpan">内容1</span>
+        </li>
+        <li class="middle">
+            <a href="#">2</a>
+            <span>内容2</span>
+        </li>
+        <li class="last">
+            <a href="#">3</a>
+            <span>内容3</span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    //console.log($('ul').children()) //获取ul下面所有的子元素集合
+    //console.log($('ul').children('.active'));
+    //console.log($('ul').parent()) //获取ul的父元素集合
+    //console.log($('a').parent('.active')) //带有class为active的a元素的父元素
+    //console.log($('ul').parents()) //获取ul的所有祖先元素的集合
+    //console.log($('span').parents('li'));//获取span祖先元素中的li祖先
+    //console.log($('.targetA').next());//获取class为targetA的a元素紧邻的同级元素
+    //$('a').next('.targetSpan'); // 获取a元素紧邻的带有class为targetSpan的同级元素
+    //console.log($('.active').nextAll()) //获取class为active的li的后面的所有同级元素
+    //console.log($('.active').nextAll('.last')); //获取class为active的li的后面的带有.last同级元素.
+    console.log($('.active').nextUntil('.last')) //查询.active的li直到碰到.middle的元素就停止.
+    //$().prev() 获取上一个紧邻的元素
+    //$().prevAll() 获取上面所有的同级元素集合
+    //$().prevUntil() 获取上面所有的同级元素集合直到某个条件为止
+    //$('.middle').siblings()  //获取所有同级的li
+
+    //向上找
+    $('.targetSpan').closest('li');//class为targetSpan的最上级的li元素
+    //向下找
+    $('li').find('.targetSpan') //从li中去寻找class为targetSpan的元素
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断用户输入字体</title>
+    <script src="jquery.js"></script>
+    <style>
+        strong {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<p>和大家分享一点新鲜事吧？<span>您还可以输入<strong>140</strong>个字</span></p>
+<textarea cols="80" rows="20"></textarea>
+</body>
+</html>
+<script>
+    $(function(){
+        $('textarea').keyup(function(){
+            var length = $('textarea').val().length;
+            var content = $('textarea').val();
+            var number = 0;
+            //循环所有的字符，判断它是英文还是中文
+            for(var i=0;i<length;i++){
+                if(content[i].charCodeAt() < 255){
+                    //英文
+                }else{
+                    //中文
+                }
+            }
+            if(length > 140){
+                $('span').html('您已经超出了<strong>' + Math.abs(140 - length) + '</strong>个字');
+            }else{
+                $('span').html('您还可以输入<strong>' + (140 - length) + '</strong>个字');
+            }
+        })
+    })
+</script>

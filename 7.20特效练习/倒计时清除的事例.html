@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时的效果</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        #container {
+            width:300px;
+            height:150px;
+            margin:0 auto;
+            background:#000;
+            text-align:center;
+            color:white;
+            line-height:80px;
+        }
+        #container span {
+            padding:0 10px;
+            background:#fff;
+            border:2px solid #ccc;
+            color:#000;
+            margin:0 10px;
+        }
+        #container button {
+            width:280px;
+            height:30px;
+            background:blue;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <span>01</span>
+    分钟
+    <span>50</span>
+    秒
+    <br>
+    <button type="button">开始倒计时</button>
+</div>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        var time;
+        var button = document.querySelector('button');
+        var span = document.querySelectorAll('span');
+        var turn = false;
+        button.onclick = function(){
+            if(turn == false){
+                clearInterval(time);
+                time = null;
+                turn = true;
+            }else{
+                time = setInterval(updatetime,1000)
+                turn = false;
+            }
+        }
+        function updatetime(){
+            var allTime = (span[0].innerHTML.replace(/^0/,'') * 60) +
+            parseInt(span[1].innerHTML.replace(/^0/,''));
+            allTime -- ;
+            //分钟
+            if(allTime < 0){
+                clearInterval(time);
+                return;
+            }
+            span[0].innerHTML = parseInt(allTime / 60) < 10 ? '0' + parseInt(allTime/60) : parseInt(allTime/60);
+            span[1].innerHTML = parseInt(allTime % 60) < 10 ? '0' + parseInt(allTime % 60) : parseInt(allTime % 60);
+        }
+    }
+</script>

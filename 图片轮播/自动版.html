@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        ul,ol,dl,li {
+            list-style:none;
+        }
+        body {
+            background:#000;
+            text-align:center;
+        }
+        .container {
+            position:relative;
+            width:490px;
+            height:170px;
+            padding:5px;
+            background:#fff;
+            border:4px solid #fff;
+            border-radius: 5px;
+            margin:10px auto;
+        }
+        .container .list li {
+            position:absolute;
+            width:490px;
+            height:170px;
+            opacity: 0;
+        }
+        .current {
+            opacity: 1 !important;
+        }
+        .number {
+            position:absolute;
+            right:0;
+            bottom:10px;
+        }
+        .number li {
+            float:left;
+            width:20px;
+            height:20px;
+            background:rgb(255,200,0);
+            opacity: 0.7;
+            border-radius:50%;
+            color:#fff;
+            margin-left:5px;
+        }
+        .active {
+            color:#fff !important;
+            background:rgb(255,80,0) !important;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="list">
+        <li class="current"><img src="01.jpg"></li>
+        <li><img src="02.jpg"></li>
+        <li><img src="03.jpg"></li>
+        <li><img src="04.jpg"></li>
+        <li><img src="05.jpg"></li>
+    </ul>
+    <ul class="number">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        //1.选中所需要操作的元素
+        var box = document.querySelector('.container');
+        var ImgUl = document.querySelector('.list');
+        var ImgLi = document.querySelectorAll('.list li');
+        var allImg = document.querySelectorAll('.list li img');
+        var allNum = document.querySelectorAll('.number li');
+        //定时器的变量
+        var timer = null;
+        //开始位置
+        var start = 1;
+        var timer = setInterval(function(){
+            if(start > 4){
+                start = 0
+            };
+            showImg(start);
+            start ++;
+        },1000)
+        function showImg(index){
+            //清除所有的图片的显示以及导航的被选中的样式
+            for(var j=0;j<ImgLi.length;j++){
+                ImgLi[j].style.opacity = 0;
+                allNum[j].className = '';
+            }
+            //让当前导航所对应的图片显示出来，然后，当前导航被选中
+            ImgLi[index].style.opacity = 1;
+            allNum[index].className = 'active';
+        }
+
+
+    }
+</script>

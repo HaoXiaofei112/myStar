@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数的缺陷</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function cat(){
+        this.category = '猫科';
+        //每一只实例化出来的猫都有自己的say方法，实际上，造成了资源的浪费
+        //我们可以考虑将say方法作为每只猫的公共方法来使用，这样一来，每只猫
+        //都共享同一个say方法
+        /*this.say = function(){
+            console.log('瞄瞄瞄');
+        }*/
+    }
+    //cat.prototype //cat的原型:放公共属性和方法的地方
+    //1.往原型上添加方法的第一种形式
+    cat.prototype.say = function(){
+        console.log('瞄瞄瞄');//我们在cat的原型中添加了一个say方法
+    }
+    console.log(cat.prototype);
+    //2.往原型上添加方法的第二种形式
+    /*cat.prototype = {
+        //必须重新指明一下原型的指向(构造函数)
+        constructor:cat,//原型的所属者是cat.
+        say:function(){
+            console.log('瞄瞄瞄');
+        }
+    }*/
+
+    var daMao = new cat();
+    var erMao = new cat();
+    console.log(daMao);
+    daMao.say();
+    erMao.say(); //同一个say方法
+    console.log(daMao.__proto__) //访问到daMao的原型
+    console.log(erMao);
+    console.log(erMao.__proto__) //访问到erMao的原型
+
+    //总结：构造函数在实例的时候，每次都会copy一份属性和方法，很多情况下，对于方法来讲
+    //每个对象有拥有单独的方法造成了资源的浪费，所以，JS的作者发明了一个prototype的属性(原型的概念)，我们可以把公共的方法放到构造函数的原型中去，这样，当你去实例化构造函数的时候，实例化后的对象就会拥有公共的方法，避免了资源的浪费.
+
+    //私有的属性放到this中，公共的方法放到原型中去.
+    function cat(color){
+        this.color = color;//私有的，每只猫颜色都不一样
+    }
+    cat.prototype.say = function(){
+        console.log('瞄瞄瞄');//公共的，每只猫其实都会叫
+    }
+    var daMao = new cat('黄色'); //黄猫
+    var erMao = new cat('黑色'); //黑猫
+
+
+
+
+</script>

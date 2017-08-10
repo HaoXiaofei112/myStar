@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素相对于父元素的位置</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        #wrapper {
+            position:relative;
+            width:500px;
+            height:500px;
+            border:1px solid #ccc;
+            margin:0 auto;
+        }
+        section {
+            position:absolute;
+            width:100px;
+            height:100px;
+            background: #000;
+            left:100px;
+            top:100px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <section>box</section>
+</div>
+</body>
+</html>
+<script>
+    var section = document.querySelector('section');
+    console.log(section.offsetLeft);
+    console.log(section.offsetTop);
+
+
+</script>
+

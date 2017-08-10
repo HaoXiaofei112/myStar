@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量的作用域</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var global = '我是全局作用域';//全局作用域
+    //代码执行阶段变量不会被垃圾回收机制回收，页面关闭的时候才会释放.
+    function box(){
+        var inner = '我是局部作用域';//局部作用域
+        //局部的变量函数执行完毕后垃圾回收机制回收
+    }
+    box();
+    //特殊情况下，局部的不会被回收
+    var target;
+    function box2(){
+        var inner = 20;
+        target = inner;//inner局部变量被全局引用了，所以不会被回收.
+    }
+    box2();
+    //console.log(target);
+
+    //变量的作用域有一个提升的功能，可以先使用后声明
+    //var foo;
+    foo = 12;
+    var foo;//变量的声明会被提升到代码的最上面
+    console.log(foo);
+
+    //y的声明也会被提升.
+    var x = 10;
+    //var y ;
+    console.log(x + y); // 10 + undefined
+    var y = 20;
+
+    //函数也可以先使用后声明
+    /*box3();
+    function box3(){
+        alert('我可以对函数先使用后声明');
+    }*/
+
+    //如果是这种形式的函数却不可以
+    box4();
+    console.log(box4);//undefined
+    var box4 = function(){
+        alert('测试一下');//这里说明只有声明才能被提升，赋值没有办法提升.
+    }
+
+    //大家写代码
+    var a;
+    a * b;
+    //我用到哪个变量，我就在当前的位置声明这个变量
+    var test;
+    test * a ;
+
+    var dosmeting;
+    dosmeting * b;
+
+    //推荐做法
+    //先把所有变量的声明放在代码的最开始的位置
+    var a;
+    var test;
+    var dosmeting;
+    //写我的代码.....
+
+
+    //var a = 10;
+    function test(){
+        //var a = 20;
+        console.log(a);
+        function test2(){
+            //var a = 30;
+            console.log(a);
+        }
+        test2();
+    }
+    test();
+    console.log(a);
+    //总结： 变量的作用域有函数内(局部)和函数外(全局)两种作用域,在使用变量的时候，
+    //首先，会在自身的作用域中去寻找，如果找不到，就向它上级的作用域中去寻找，直到找到
+    //全局。
+
+
+
+
+
+
+
+
+
+
+
+</script>

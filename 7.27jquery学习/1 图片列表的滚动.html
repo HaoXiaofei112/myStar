@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片列表的滚动</title>
+    <script src="jquery.js"></script>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        ul,ol,dl,li {
+            list-style:none;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        .show {
+            width:700px;
+            height:200px;
+            margin:50px auto;
+            position:relative;
+        }
+        .itemshow {
+            position:relative;
+            width:640px;
+            height:200px;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        .show > a {
+            font-size:50px;
+            font-weight:bold;
+            color:#888;
+        }
+        .show > a.next {
+            position:absolute;
+            top:calc(50% - 50px);
+            left:0;
+        }
+        .show > a.prev {
+            position:absolute;
+            top:calc(50% - 50px);
+            right:0;
+        }
+        ul.items {
+            position:absolute;
+            top:0;
+            left:0;
+            display:flex;
+            height:190px;
+        }
+        .items li {
+            width:160px;
+            height:190px;
+            float:left;
+        }
+        .items li span {
+            display:block;
+            width:160px;
+            color:red;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<div class="show">
+    <a class="next" href="javascript:void(0)"> < </a>
+    <a class="prev" href="javascript:void(0)"> > </a>
+    <div class="itemshow">
+        <ul class="items">
+            <li>
+                <a href="#">
+                    <img src="img/1.jpg">
+                    <span>高级程序设计</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/2.jpg">
+                    <span>编程艺术</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/3.jpg">
+                    <span>权威指南</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/4.jpg">
+                    <span>框架设计</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/5.jpg">
+                    <span>数据结构与算法</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/6.jpg">
+                    <span>权威教程</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/7.jpg">
+                    <span>编程实战</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/8.jpg">
+                    <span>高性能</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/9.jpg">
+                    <span>深入浅出</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/10.jpg">
+                    <span>响应式布局</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/11.jpg">
+                    <span>JqueryMobile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/12.jpg">
+                    <span>富应用开发</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/13.jpg">
+                    <span>数据结构与算法教程</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    /*$(function() {
+        var num = 0;
+        var step= null;
+        var tNum= 0;
+        $('a.next').click(function() {
+            ++num;
+            if(num < 11) {
+                step = -(num * 160);
+                $('ul.items').css('left', step + 'px');
+                tNum=num;
+            }
+            else{num = 10;}
+        })
+        $('a.prev').click(function() {
+            --num;
+            if(num>=0){
+                $('ul.items').css('left',step+(160*(tNum-num)) + 'px');
+            }else{num=0;}
+        })
+    })*/
+    $(function () {
+        var num = 0;
+        var step = 0;
+        $('a.next').click(function () {
+            if (num < 9){
+                num ++;
+                step = (num * 160) + 'px';
+                $('ul.items').css('left' , '-' +step);
+            }
+        });
+        $('a.prev').click(function () {
+            if (num > 0){
+                num --;
+                step = (num * 160) + 'px';
+                $('ul.items').css('left' , '-' +step);
+            }
+        });
+    });
+</script>

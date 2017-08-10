@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加事件</title>
+</head>
+<body>
+<!--行内事件的写法-->
+<button onclick="alert(1)">点击我</button>
+<!--采用 on+事件类型 = "事件处理语句" 这种形式来给DOM元素添加事件-->
+<button class="button">再次点击我</button>
+<!--采用addEventListener来添加事件-->
+<button class="bt">通过addEvent函数添加</button>
+</body>
+</html>
+<script>
+    var fun = function(event){
+        console.log(event);//事件处理函数中有一个非常特殊的对象
+        //这个对象包含了关于事件的信息.
+        event.target //这是事件发生的目标
+        event.altKey //事件发生的时候是否按了alt键
+        event.button //事件发生的时候按下了鼠标哪个键 (鼠标事件)
+        event.clientX; //鼠标相对于视图的横坐标
+        event.clientY; //鼠标相对于视图的纵坐标
+        event.ctrlKey;//事件发生的时候是否按了ctrl键
+        event.offsetX;//触发元素左上角距离鼠标坐标的横坐标
+        event.offsetY;//触发元素左上角距离鼠标坐标的纵坐标
+        event.pageX;//鼠标相对于文档的横坐标
+        event.pageY;//鼠标相对于文档的纵坐标
+        event.screenX;//鼠标相对于屏幕的横坐标
+        event.screenY;//鼠标相对于屏幕的纵坐标
+        event.shiftKey;//事件发生的时候是否按下了shift键
+        event.type;//事件的类型
+
+
+
+
+        alert('标准的事件处理函数');
+    };
+    window.onload = function(){
+        var button = document.querySelector('.button');
+        //事件发生的元素.on+事件类型 = 事件处理函数
+        button.onclick = function(){
+            alert('我是正确的添加事件的方式');
+        }
+        var button2 = document.querySelector('.bt');
+        button2.addEventListener('click',fun,false);
+        //三个参数，第一个参数是事件的类型，第二个参数是事件的处理函数，
+        //第三个参数是是否冒泡.
+        //移除事件
+        //button2.removeEventListener('click',fun);
+
+        //针对IE下面的添加事件和移除事件
+        //button2.attachEvent('click',fun);
+        //button2.detachEvent('click',fun);
+
+
+
+    }
+</script>

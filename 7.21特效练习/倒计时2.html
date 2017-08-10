@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>秒杀倒计时</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #content{
+            width: 400px;
+            /*height: 80px;*/
+            margin: 20px auto;
+            background: #7872CD;
+            color: white;
+            text-align: center;
+            /*padding-top:20px;*/
+            line-height: 100px;
+        }
+        #content p{
+            margin: 50px 0;
+            font-size: 40px;
+            color: red;
+            display: none;
+        }
+        #content span{
+            padding: 10px;
+            margin: 10px auto;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <h2>距离世界末日还有</h2>
+    <span>00</span> 时 <span>00</span> 分 <span>00</span> 秒
+    <p>你</p>
+    <p>还在</p>
+    <p>等什么</p>
+    <p>?????</p>
+</div>
+</body>
+</html>
+<script>
+    //确保标签加载完毕在执行代码
+    window.onload = function () {
+//       year,month,day 是allTime方法的形参
+
+        var time = setInterval(function() {
+            //1.获取当前时间 h m s
+            var myDate = new Date();
+            //获取结束时间的具体时间
+            var endDate = new Date('2017-7-22 09:20:00');
+//           距离结束剩余多少时间
+            var endTime = endDate.getTime() - myDate.getTime();
+            //先判断，到0时停止
+            if(endTime<0){
+                clearInterval(time);
+                alert('你要炸了！！！');
+                var p = document.querySelectorAll('p');
+                for(var i=0;i<p.length;i++){
+//                    p[i].index = i;
+                    p[i].style.display = 'block';
+                }
+
+
+            }
+//           转化为秒，并转化为整数进行运算
+            var endSeconds = parseInt(endTime/1000);
+//            console.log(typeof endSeconds);
+//            console.log(endSeconds);
+            var hour = Math.floor(endSeconds/3600);
+//            console.log(typeof hour);
+//            console.log(hour);
+            var minute = Math.floor(endSeconds%3600 / 60);//((endSeconds - hour*3600)/60);
+            var second = Math.floor(endSeconds%60);  //(endSeconds- hour*3600 - minute*60);
+//            console.log(second);
+//              获取需要改变的标签
+            var span = document.querySelectorAll('span');
+//             输出到显示屏
+            span[0].innerHTML = hour < 10 ? '0' + hour : hour;
+            span[1].innerHTML = minute < 10 ? '0' + minute : minute;
+            span[2].innerHTML = second < 10 ? '0' + second : second;
+
+
+        },1000);
+        //没隔一秒执行一次
+//        window.setInterval(allTime,1000);
+    }
+    var time = setTimeout(function(){
+        alert(1);
+        setTimeout(arguments.callee,1000)
+    },1000)
+</script>

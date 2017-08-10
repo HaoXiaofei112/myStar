@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing: border-box;
+        }
+        ul,ol,dl,li{
+            list-style: none;
+        }
+        body{
+            background-color: black;
+        }
+        #container{
+            width: 230px;
+            margin: 0 auto;
+        }
+        .clear{
+            clear: both;
+        }
+        #container ul {
+
+        }
+        #container ul li{
+            float: left;
+            width: 50px;
+            height: 50px;
+        }
+        #container ul li:first-child{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="container">
+    <ul>
+        <li><img src="img/big_1.jpg" alt=""></li>
+        <li>
+            <img src="img/small_1.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/small_2.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/small_3.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/small_4.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/small_5.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/small_6.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/small_7.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/small_8.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/small_9.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/small_10.jpg" alt="">
+        </li>
+        <li>
+            <img src="img/small_11.jpg" alt="">
+        </li>
+        <div class="clear"></div>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        var allImg = document.querySelectorAll('img');
+        var targetImg = allImg[0];
+        for(var i =1;i<allImg.length;i++){
+            allImg[i].onmousemove =function () {
+                targetImg.src = this.src.replace(/small/,'big');
+            }
+        }
+    }
+</script>

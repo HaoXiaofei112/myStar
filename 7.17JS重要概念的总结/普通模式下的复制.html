@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>普通模式下的复制</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var dog = {
+        category: '犬科',
+        say:function(){
+            console.log('汪汪汪');
+        }
+    }
+    //1.引用类型的赋值，改变任何一个，其他的都会改变.
+    /*var daMao = dog;
+    daMao.color = '黄色';
+    console.log(daMao);*/
+
+    //2.直接定义一个daMao，效率低下，不适合扩展
+    /*var daMao = {
+        category: '犬科',
+        say:function(){
+            console.log('汪汪汪');
+        },
+        color:'黄色'
+    }*/
+    //设计一个函数,通过这个函数，我们可以将dog里面所有的属性否复制给daMao.
+    function copy(dog){
+        var obj = {};
+        for(key in dog){
+            obj[key] = dog[key];
+        }
+        return obj; //return 返回一个值.
+    }
+    var daMao = copy(dog);
+    console.log(daMao); //完成复制.
+    daMao.color = '黄色';
+    console.log(dog);
+
+    var erMao = copy(dog);
+    erMao = '黑色';
+    console.log(erMao);
+
+    var dog = {
+        name:"lzy"
+    };
+    var daMao = {
+        color:'red'
+    };
+    var obj = {};
+    obj = dog;
+    daMao = obj;
+    obj = null;
+    daMao.name = 'test';
+    console.log(dog);
+    //无论你通过多少次赋值操作，引用类型都会存在相互引用的情况.
+
+
+
+
+</script>

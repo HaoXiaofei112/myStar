@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引用类型存在的缺陷</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //obj1是在栈里面的.
+    var obj1 = {
+        a:10,
+        b:20
+    } //{a:10,b:20} 创建的时候是直接扔到堆里面的.
+    var obj2 = obj1;//obj1指向的地址赋值给了obj2,他们指向同一个对象.
+    console.log(obj2);
+    //修改对象的属性
+    obj2.a = '我被修改了'; //{a:'我被修改了'} 修改后
+    console.log(obj1); // obj1.a同样也被修改了.
+
+    //如果说我要函数传参的形式
+    function test(a,b){//形参
+        //相当于在函数内完成了形参与实参之间的赋值.
+        //var a = 10;
+        //var b = 20;
+    }
+    test(10,20) //实参
+
+    var obj = {name:'lzy'};
+    function test2(object){
+        //var object = obj;
+        console.log(object);
+        object.name = 'test';
+    }
+    test2(obj);
+    console.log(obj.name);
+    //函数传参的情况下，传递一个对象，内部修改这个对象，外面的值也会发生变化.
+
+    //总结:引用类型在赋值的过程中，得到的仅仅是一个地址.
+</script>

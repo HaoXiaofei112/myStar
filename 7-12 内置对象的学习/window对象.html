@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window对象</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //一个全局对象，在页面中任何位置都可以访问到.
+    //并且，浏览器上所有的API,函数、方法都是window对象下面的.
+    console.log(window);
+    //window.alert()
+    //alert('hello world');//让浏览器弹出一个窗口.参数是窗口的内容
+    //window.confirm()
+    //confirm('您确认要删除吗?')//让浏览器弹出一个确认和取消的对话框
+    //window.prompt('请输入您的支付宝账号:',0);//弹出一个输入框
+    //window.open('http://www.baidu.com');
+
+    //函数setTimeout 隔多少秒执行
+    /*alert(1)
+    setTimeout(function(){
+        alert('5秒后弹出！');//延迟5秒执行代码
+    },5000); //5秒
+    alert(2);
+    alert(3);*/
+    //clearTimeout 清除循环
+
+    //函数setInterval 每隔多少秒执行
+    setInterval(function(){
+        //window.open('http://www.jd.com');
+    },1000)
+    clearInterval() //清除循环的
+
+    //Math数学函数
+    Math.abs(-10) //返回绝对值的 10
+    Math.ceil(3.1415926) //向上取整后的值  3
+    Math.round(123456.456456) //返回四舍五入后的整数
+    Math.floor(7541.45) //返回小于x的最大整数
+    console.log(parseInt(Math.random() * 100)) //返回一个0-100之间的随机数
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

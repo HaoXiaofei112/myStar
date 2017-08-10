@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>console对象</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    console.log('在控制台输出日志');
+    console.error('在控制台输出错误');
+    console.warn('在控制台输出警告');
+    console.info('在控制台输出信息');
+    var a = 10;
+    var b = 20;
+    console.log('我要输出的内容是:',a);
+    //断言测试
+    console.assert(a + b == 10,'错误');
+    console.log(1);//断言测试也不会阻止下面代码的执行
+
+    var obj = {
+        a:1,
+        b:2,
+        c:3,
+        run:function(){
+
+        },
+        d:[1,2,3,4,5]
+    }
+    console.log(document.querySelector);
+    console.dir(document.querySelector); //推荐大家，复杂数据类型使用dir来展开
+
+    //console.time 性能测试
+    console.time('end');
+    for(var i=0;i<100;i++){
+        var result = i + 1;
+    }
+    console.log(result);
+    console.timeEnd('end');//名字一定要是相同的名字
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

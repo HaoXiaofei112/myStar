@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom的添加、删除、替换</title>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">我的首页</a></li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">产品信息</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p id="a">我的内容</p>
+        <form action="" method="post">
+            <label>用户:</label>
+            <input type="text" value="">
+            <label>密码:</label>
+            <input type="password" value="">
+            <input type="submit" value="提交">
+        </form>
+    </main>
+    <footer>
+        <p class="b">DOM的选择实例</p>
+    </footer>
+</div>
+</body>
+</html>
+<script>
+    var ul = document.querySelector('ul');
+    //新建一个标签元素
+    var newLi = document.createElement('li');
+    var content = document.createTextNode('我是新li里面的内容');
+    newLi.appendChild(content);
+    console.log(newLi);
+
+    //添加元素
+    //ul.appendChild(newLi); //添加到ul列表的末尾
+    //添加到某个位置上去
+    ul.insertBefore(newLi,ul.children[1]); //指明插入的位置完成添加
+    //删除元素
+    ul.removeChild(newLi);
+    //替换
+    ul.replaceChild(newLi,ul.children[1]);
+
+
+
+
+
+
+
+
+
+</script>

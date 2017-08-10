@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>错误对象</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    var student;
+    //console.log(student.name); //去调用一个不存在的属性或者变量
+    //那么控制台会报一个typeError的错误(类型错误),通常这种类型的错误都是未定义造成的
+
+    //console.log(stdent.helloword());//引用错误，通常是拼错或者打错了，会造成引用错误
+    //student.hello(）;//语法错误，代码不符合javascript语法规范的时候会造成这个错误
+
+    //1.创建错误对象
+    var error = new Error('里面是错误对象的描述信息或者提示信息');
+    //2.抛出这个错误
+    //throw error;
+    //一旦抛出错误，下面的代码是不执行的.
+    //var TypeError = new TypeError('我是一个类型错误对象');
+    //var ReferenceError = new ReferenceError('我是引用错误对象');
+    //var snytaxError = new snytaxError('我是一个语法错误对象');
+
+    //将可以会出现错误的代码放到try里面去，然后如果说代码发生了错误，那么try会把错误
+    //放到catch里面，我们可以在catch里面抛出这个错误.
+    try {
+            var student;
+            if(student.isMale){
+                console.log('男生');
+            }else{
+                console.log('女生');
+            }
+    }
+    catch(err){
+         //throw err; //浏览器默认会抛出
+         //console.log(err);//抛出这个错误;
+        if(err){
+            console.log('有语法错误请仔细检查');
+        }else{
+            console.log('代码没问题');
+        }
+    }
+    console.log(1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

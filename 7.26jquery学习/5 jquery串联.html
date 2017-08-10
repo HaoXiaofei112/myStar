@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery串联</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li class="test">3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<p>jquery的学习</p>
+<span>版本号:3.2.1</span>
+</body>
+</html>
+<script>
+    $(function(){
+        //add操作相当于入栈,end操作相当于出栈操作.
+        /*$('ul').add('p').add('span').end().end().end().css('color','red')
+            .html().is().filter().children().add();*/
+        //$('.test').nextAll().addBack().end().end().css('color','red');
+        $('ul').add('p').add('span').addBack().css('color','red');
+
+    })
+</script>

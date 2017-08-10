@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素的大小</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        section {
+            width:500px;
+            height:500px;
+            padding:10px;
+            margin:0 auto;
+            border:1px solid #ccc;
+            background:red;
+            color:white;
+            line-height:500px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<section>
+    我是一个元素
+</section>
+</body>
+</html>
+<script>
+    var section = document.querySelector('section');
+    console.log(section.clientWidth); // content + padding
+    console.log(section.clientHeight); //content + padding
+
+    console.log(section.offsetWidth); //content + padding + border
+    console.log(section.offsetHeight);//content + padding + border
+
+    console.log(section.scrollWidth); //content + padding + scrollLeft
+    console.log(section.scrollHeight); //content + padding + scrollTop
+
+
+
+
+</script>

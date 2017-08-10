@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复杂数据类型的学习</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //函数的创建方式
+    //1.通过new关键字创建函数
+    var fun = new Function();
+    console.log(typeof fun);//function
+
+    //2.通过字面量形式创建
+    function test(){
+        console.log(1);
+    }
+    console.log(test);
+
+    //3.可以通过变量声明的方式
+    var fun = function(){
+        console.log(1);
+    }
+    console.log(fun);
+    //函数可以作为参数形式来进行传递，传递到函数内部的函数叫做回调函数
+    function a(){
+
+    }
+    function b(a){
+        a();//a就是b的回调函数
+    }
+    console.log(a instanceof Function);//判断一下a是否是函数.
+
+    //数组的创建
+    //1.通过new关键字
+    var arr = new Array();
+    var arr2 = new Array(1,2,3,4);
+    console.log(typeof arr2);//typeof 来判断一个变量的数据类型
+
+    //2.可以通过字面量的形式创建
+    var arr3 = [4,5,6,7,8];
+    //取值的时候可以使用[]下标形式，注意：数组的下标是从0开始计数的
+    //arr3[0],arr3[1],arr3[2]
+    //可以通过.length属性来获取到数组的长度
+    //arr3.length
+    console.log(typeof arr3);
+    console.log(arr3 instanceof Array);//可以通过instanceof这个方法来判断某个数据
+    //是否属于某个类型，如果是则为真，如果不是则为假.
+
+    //对象的创建方法
+    //1.new关键字
+    var obj = new Object();
+    //2.字面量形式
+    var obj2 = {
+        name:'lizhiyuan',
+        age:30,
+        say:function(){
+            alert('hello')
+        }
+    }
+    obj2.name //姓名
+    obj2.age //年龄
+    obj2.say() //say方法
+
+    //3.可以先创建，后赋值
+    var obj3 = {};
+    obj3.name = 'zhiyou';
+
+    //number类型
+    var num = new Number();
+    var num = 10;//字面量形式
+    //string类型
+    var str = new String();
+    var str = 'asdfasf';
+    //boolean类型
+    var bl = new Boolean();
+    var bl = false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

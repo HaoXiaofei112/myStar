@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:100%;
+            height: 100%;
+            text-align: center;
+        }
+        p{
+           // text-align: center;
+            margin-top: 100px;
+            color: red;
+            font-size: 30px;
+        }
+        span{
+            color:greenyellow;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+    <p>世界末日到了，接受狗哥的审判吧！！！</p>
+    <span>2</span>年<span>0</span>月 <span>00</span>天<span>00</span>时 <span>00</span>分 <span>00</span>秒
+    <br> <button>开始</button>
+</div>
+</body>
+</html>
+<script>
+    window.onload = function () {
+       var time = setInterval(updatetime,1000)
+        var button = document.querySelector('button');
+        var span = document.querySelectorAll('span');
+        var turn = false;
+        button.onclick = function () {
+            if (turn == false) {
+                clearInterval(time);
+                time = null;
+                turn = true;
+            } else {
+                time = setInterval(updatetime, 1000)
+                turn = false;
+            }
+        }
+        function updatetime() {
+            var allTime =
+                (span[0].innerHTML.replace(/^0/, '') * (3600*24*30*12))+
+                (span[1].innerHTML.replace(/^0/, '') * (3600*24*30))+
+                (span[2].innerHTML.replace(/^0/, '') * (3600*24)) +
+                (span[3].innerHTML.replace(/^0/, '')*(60*60)) +
+                (span[4].innerHTML.replace(/^0/, '') * 60) +
+                parseInt(span[5].innerHTML.replace(/^0/, ''));
+            allTime--;
+            //分钟
+            if (allTime < 0) {
+                clearInterval(time);
+                return
+            }
+            console.log(allTime)
+            span[0].innerHTML = parseInt(allTime /60/60/24/30/12 ) < 10 ? '0' +
+                parseInt(allTime /60/60/24/30/12 ) : parseInt(allTime /60/60/24/30/12 );
+            span[1].innerHTML = parseInt(allTime /60/60/24 /30%12 ) < 10 ? '0' +
+                parseInt(allTime /60/60/24/30%12 ) : parseInt(allTime /60/60/24/30%12 );
+            span[2].innerHTML = parseInt(allTime /60/60/24%30 ) < 10 ? '0' +
+                parseInt(allTime /60/60/24%30 ) : parseInt(allTime /60/60/24%30 );
+            span[3].innerHTML = parseInt(allTime / 60 /60 % 24) < 10 ? '0' +
+                parseInt(allTime / 60 /60 % 24) : parseInt(allTime / 60 /60 % 24);
+            span[4].innerHTML =  parseInt(allTime /60 % 60) < 10 ? '0' +
+                parseInt(allTime /60 % 60) : parseInt(allTime /60 % 60);
+            span[5].innerHTML = parseInt(allTime % 60) < 10 ? '0' +
+                parseInt(allTime % 60) : parseInt(allTime % 60);
+
+
+
+        }
+    }
+</script>

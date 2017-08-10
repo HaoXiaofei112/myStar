@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置方法的学习--string类型</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var str = new String('我是超人');
+    console.dir(str);
+    //console.log(str.charAt(2));//根据指定的位数返回对应的字符,合法范围内
+    //console.log(str.charCodeAt(2));//返回的结果是unicode格式的
+    var str2 = '我是传奇';
+    var result = str.concat(str2);//连接两个字符串，返回一个新的字符串.
+    //console.log(result);
+    var str3 = '     我的住处离单   位不远，走过去不到   十分钟，我习惯了每天早上路过早市吃上一份  豆腐  脑，也习  惯了  每天   中午在Food  mark里面找点吃的东西，也习惯了下班后去工体跑步；如果因为跳槽导致我需要每天通勤，通勤的时间成本也是一大块隐性成本     ';
+    //slice,substring,substr
+    //1.一个参数的情况,起始位置.
+    //console.log(str3.slice(10));
+    //console.log(str3.substring(10));
+    //console.log(str3.substr(10));
+
+    //2.两个参数的情况.
+    console.log(str3.slice(10,20)); //从10到20
+    console.log(str3.substring(10,20));//从10到20
+    console.log(str3.substr(10,20));//从10开始，截取20个字符
+
+    //负数情况
+    console.log(str3.slice(-10));//从末尾开始截取10位
+    console.log(str3.slice(-10,-5));//从末尾10开始，截取到末尾5位.
+    console.log(str3.substring(-10)); //负数无法截取
+    console.log(str3.substring(-10,-5));//负数不支持
+    console.log(str3.substr(-10));//从末尾截取10位
+    console.log(str3.substr(-10,-20)); //不支持
+
+    console.log(str3.indexOf('也习惯了下班后去工体跑步')); //应该是成本所对应的位置.
+    console.log(str3.split('，'));//按照某个字符截取字符串，返回字符串数组.
+    console.log(str3.trim());//去除开始和结尾的空格.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

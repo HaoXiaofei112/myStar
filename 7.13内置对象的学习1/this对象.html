@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this对象</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //console.log(this); //this在JS中是一个很特殊的对象，它指向全局的window对象.
+    function test(){
+        console.log(this);//同样也是window对象.
+    }
+    test();
+
+    var obj = {
+        name:'lizhiyuan',
+        age:30,
+        _this:this,
+        run:function(){
+            console.log(this._this);
+        }
+    }
+    obj.run();//this指的是...对象本身
+
+    //在事件里面，this指的是事件发生的目标元素
+    document.onclick = function(){
+        alert(this); //this指的是...document本身.
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

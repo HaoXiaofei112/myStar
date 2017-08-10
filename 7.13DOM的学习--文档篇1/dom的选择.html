@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选中DOM元素</title>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">我的首页</a></li>
+                <li><a href="#">公司介绍</a></li>
+                <li><a href="#">产品信息</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p id="a">我的内容</p>
+    </main>
+    <footer>
+        <p class="b">DOM的选择实例</p>
+    </footer>
+</div>
+</body>
+</html>
+<script>
+    //document对象上获取 window.document文档对象
+
+    //通过标签来选择到某个元素
+    var tagP = document.getElementsByTagName('p');//选取所有的p标签
+    //console.dir(tagP);//HTML集合 HTML对象
+    //[]来获取数组里面的每一个P标签
+
+    var idP = document.getElementById('a'); //通过ID为a选取标签元素
+    var classP = document.getElementsByClassName('b') //通过class选择标签元素
+
+    //querySelect
+    //console.log(document.querySelector('p'));//选取一个
+    //console.log(document.querySelectorAll('p'));//选取所有的
+    document.querySelector('#a');
+    document.querySelector('.b');
+
+    //选取ul里面的第三个li
+    console.log(document.querySelector('ul li:nth-of-type(3)'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

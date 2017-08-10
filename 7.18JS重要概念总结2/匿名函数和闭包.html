@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>匿名函数和闭包</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //()() 的意思是自执行函数，也就是这个函数自动执行.
+    //匿名函数是没有名字的函数，通常这种函数要么通过自执行调用，要么作为回调函数.
+    (function (){
+        //alert(1);
+    })()
+    document.onclick = function(){} //这个函数是作为事件发生的回调函数
+
+    //变量的作用域：从内部访问外部是可以的，从外部访问内部是不可以的.
+    var a = 10;
+    function box(){
+        //console.log(a);
+        var b = 20;
+        return b;
+    }
+    //console.log(b);
+    var result = box();
+
+    //闭包的概念
+    //1.可以在外部访问到内部的值
+    function box(){
+        var b = 10;
+        return function(){
+            return b;
+        }
+    }
+    //var result = box()();
+    //var result = box()();
+    //console.log(result);
+
+    //2.将变量作为全局的一样，不会被垃圾回收机制回收.
+    function box2(){
+        var b = 10;
+        return function(){
+            b++;
+            return b;
+        }
+    }
+    /*var result = box2();
+    console.log(result());//11
+    console.log(result());//12
+    console.log(result());//13*/
+
+    console.log(box2()());
+    console.log(box2()());
+    console.log(box2()());
+
+    //创建一个对象
+    var obj = {
+        user:function(){
+            return function(){
+                console.log(this); //window，在闭包里面，this永远指向window
+            }
+        }
+    }
+    var result = obj.user();
+    result();
+
+
+
+
+
+
+
+
+
+
+
+</script>

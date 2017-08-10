@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>堆和栈的区别</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var num = 10; //创建的变量是在栈中的，由系统自动分配，程序员不参与.
+    var obj = new Object();//创建的变量在堆中，由程序员创建.
+    obj.name = 'lizhiyuan';
+    obj.age = 30;
+    obj.say = function(){alert(100)}; //我可以在对象上添加属性和方法.
+
+    function box(){
+        var num2 = 20;//在出了作用域范围后被垃圾回收机制回收.
+        console.log(num2);
+    }
+    box();
+    console.log(num2);
+
+    //按照引用次数来清除.
+    function test(){
+        var a = {};//a的引用次数是0
+        var b = a;//a的引用次数是1
+        var c = a;//a的引用次数是2
+        b = 10 ; //a 的引用次数是1
+        c = 20; //a的引用次数是0
+        //a这个对象就可以被正常清理掉了.
+    }
+    test();
+    //局部的变量引用了全局的，不会被垃圾回收机制回收
+    var b ;
+    var c ;
+    function test(){
+        var a = {};
+        b = a;
+        c = a;
+    }
+    test();
+    //占据内存，开销比较大。页面关掉的时候才会被清除.
+
+    //标准的代码书写结构,把所有的代码放在函数内1.避免全局污染 2.自动会被垃圾回收机制回收
+    (function(window,document,undefined){
+
+    })(window,document,undefined)
+
+    //总结：js中分为基本类型(number,string,boolean,null,undefined)和引用类型
+    //object(array,function,date,regex,window,error..),基本类型是由系统自动分配的,
+    //基本类型放在栈中，由系统自动释放(垃圾回收机制回收),引用类型是程序员创建的,
+    //引用类型需要程序员手动清除(赋值null),放在堆中。
+    //如果一旦发生局部变量引用全局变量的情况，那么，局部变量便不会被垃圾回收机制回收.
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>星级评分</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        ul,li,ol,dl{
+            list-style: none;
+        }
+        #star{
+            width: 500px;
+            margin: 10px auto;
+            position: relative;
+        }
+        #star ul{
+           float: left;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        #star span {
+            float: left;
+            display: inline-block;
+        }
+
+        #star ul li{
+            float: left;
+            width: 24px;
+            cursor: pointer;
+            text-indent: -999px;
+
+            background: url("star (3).png")no-repeat;
+
+
+        }
+        #star p{
+            position: absolute;
+            width: 150px;
+            height:50px;
+            top:20px;
+            left: 50px;
+            padding: 6px 10px 0;
+            display: none;
+
+            text-align: center;
+        }
+        #star li.on{
+            background-position: 0-28px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="star">
+    <span>点击星星就能打分</span>
+    <ul>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+
+    </ul>
+    <span></span>
+    <p>qqqqqqq</p>
+</div>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        var star = document.querySelector('#star');
+        var allLi = document.querySelectorAll('li');
+        var ul = document.querySelector('ul');
+        var span = document.querySelectorAll('span')[1];
+        var p = document.querySelector('p');
+        var score = 0;
+        var click = null;
+        var list = ['非常差，非常不满意','差,不满意','一般,凑合','满意,','非常满意']
+        for(var  i=0;i<allLi.length;i++){
+            allLi[i].index = i;//记录下标
+            allLi[i].onmouseover = function () {
+                p.style.display = 'block';
+                p.style.left= ul.offsetLeft + this.offsetWidth*(this.index + 1) - 75 + 'px';
+                p.innerHTML = '<b>' + (this.index + 1) + '</b>' + '分'+list[this.index];
+                score = this.index + 1;
+                for( var j=0;j<score;j++){
+                    allLi[j].className = 'on';
+
+                }
+
+            }
+            allLi[i].onmouseout = function () {
+                if(click == null){
+                    for(var k=0;k<allLi.length;k++){
+                        allLi[k].className = '';
+                        p.style.display = 'none';
+                        span.style.display = 'none';
+
+
+                    }
+                }else if(click == true){
+                    score = this.index + 1;
+                    for(var t=0;t<score;t++){
+                        allLi[t].className = 'on';
+                    }
+                    click = null;
+                    p.style.display = 'none';
+                }
+            }
+            allLi[i].onclick = function () {
+                click = true;
+                score = this.index + 1;
+                for(var t=0;t<score;t++){
+                    allLi[t].className = 'on';
+                    span.style.display = 'block';
+                    span.innerHTML = '<b>' + score + '</b>' + '分'+list[this.index];
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用的键盘事件</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //抬起某个按键的时候
+    document.addEventListener('keyup',function(event){
+        //alert(event.keyCode); //弹出对应按键的asc码
+        //alert(event.key); //返回对应的按钮的对应的字母表
+        alert(event.code);
+    })
+    //按下某个按键的时候
+    document.addEventListener('keydown',function(event){
+        alert(event.key);
+    })
+    //连贯行为,它代表的是按下再松开,推荐使用这个来表示键盘事件
+    document.addEventListener('keypress',function(event){
+
+    })
+
+
+</script>

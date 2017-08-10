@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery常用选择器的类型</title>
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="demo">
+    <nav>
+        <ul>
+            <p>我是开始的段落</p>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <p>我是结束的段落</p>
+        </ul>
+    </nav>
+    <main>
+        <form>
+            <input type="text">
+            <input type="checkbox" value="man" checked>男
+            <input type="checkbox" value="women">女
+            <input type="submit">
+        </form>
+        <a href="#">我是链接</a>
+        <img src="img/shirt_1.jpg">
+    </main>
+    <a href="#">我是链接2</a>
+    <footer>
+        <p>段落1</p>
+        <p>段落2</p>
+    </footer>
+</div>
+</body>
+</html>
+<script>
+    //1.通过ID选取元素
+    $('#ID')
+    //2.通过class选取元素
+    $('.class')
+    //3.直接通过标签名称选取
+    $('p')
+    //4.通过后代关系选取
+    $('ul li')
+    //5.父子关系
+    $('nav > ul')
+    //6.相邻关系,紧挨着的一个元素
+    $('form + a')
+    //7.相邻关系,相邻的所有元素集合
+    $('form ~ a')
+    //8.属性选择器
+    $('div[title]') //所有包含title属性的div标签
+    $('div[title=test]') //属性title等于test的div标签
+    $('div[title!=test]') //属性title不等于test的div标签
+    $('div[title^=test]') //属性title是test开头的div标签
+    $('div[title$=test]') //属性title是test结尾的div标签
+    $('div[title*=test]') //属性title只要是包含test的div标签
+    $('div[class=test][title!=demo]')
+    //9.伪类选择器
+    //console.log($('ul li:first-child').html()) //选择到ul下面第一个子元素
+    console.log($('ul li:first-of-type')[0])  //第一个类型为li的元素
+    $('ul li:last-child') //ul下面最后一个元素
+    $('ul li:last-of-type') //最后一个类型为li的子元素
+    $('ul li:nth-child(3)') //获取第三个子元素
+    $('ul li:nth-of-type(3)') //获取类型为li的第三个子元素
+    $('ul li:only-child') //唯一的子元素
+    $('ul li:only-of-type') //唯一的li类型的子元素
+
+    //10.表单选择器
+    $(':text') //所有的type为text的表单
+    $(':password') //所有的type为password的表单
+    $(':submit') //所有的type为submit的表单
+    $(':radio') //所有的type为radio的表单
+    $(':checkbox') //所有的type为checkbox的表单
+
+    //11.表单状态选择器
+    $('input:enabled') //所有可用的input表单
+    $('input:disabled') //所有不可用的input表单
+    $('input:checked') //代表被选中的单选框、复选框、下拉框
+    $('select option:selected') //代表的是被选中的下拉框里面的option
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

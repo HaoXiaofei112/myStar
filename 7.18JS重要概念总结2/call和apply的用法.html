@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call和apply的用法</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var name = '我是全局的';
+    var jack = {
+        name:'jack',
+        age:25
+    }
+    var rose = {
+        name:'rose',
+        age:20
+    }
+    function printName(str){
+        return this.name + str;
+    }
+    var result = printName(); //window.name的值
+    console.log(result);
+    console.log(printName.call(jack,'我是传递的参数')); //jack.name的值
+    console.log(printName.call(rose));//rose.name的值
+    console.log(printName.apply(jack,['我是传递的参数'])); //jack.name的值
+    console.log(printName.apply(rose));//rose.name的值
+
+
+    function one(){
+        this.p = 'one-';
+        this.a = function(arg){
+            alert(this.p + arg);
+        }
+    }
+    function two(){
+        this.p = 'two-';
+        this.b = function(arg){
+            alert(this.p + arg);
+        }
+    }
+    var obj1 = new one();
+    var obj2 = new two();
+    obj1.a('testA');//one-testA;
+    obj2.b('testB');//two-testB;
+    obj1.a.apply(obj2,['testA']); //two-testA;
+    obj2.b.apply(obj1,['testB']); //one-testB;
+    obj1.a.call(obj2,'testA') //two-testA
+    obj2.b.call(obj1,'testB') //one-testB
+
+    //1. 函数.call(对象)，得到的结果是函数内的this指向该对象
+    //2. 对象1.方法.call(对象2),得到的结果是对象1方法里面的this指向对象2
+    //3. 构造函数1.call(构造函数2)，得到是结果是构造函数2继承了构造函数1的属性和方法
+    function base(){
+        this.name = 'jack';
+    }
+    function extend(){
+        base.call(this); //继承base的所有属性 name属性
+        this.age = 30;
+    }
+
+
+
+
+
+
+
+</script>

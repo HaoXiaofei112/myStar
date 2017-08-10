@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery加载</title>
+    <!--本地加载形式，通过官网下载或者npm包管理工具都可以安装jquery-->
+    <!--<script type="text/javascript" src="jquery-3.2.1.min.js"></script>-->
+    <!--远程加载形式，通过免费的CDN服务，我们就可以加载非本地的jquery-->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    alert(window.$ == window.jQuery);//jquery的别名
+    //$符号挂载到全局的window对象上，意味着只要你去引用jquery文件，那么你就可以使用
+    //$符号访问jquery的API.
+
+    //jquery的语法
+    $('#id').html()
+    //$(selector).method(),$代表整个jquery对象，我们所有的操作都是在jquery对象上进行的,
+    // selector代表的就是选择器(选中某一个元素),通过.方法()来访问jquery内部的API.
+
+    window.onload = function(){} // 文档加载完毕的时候
+    $(document).ready(function(){
+        //文档加载完毕的时候
+    })
+    //简写方式
+    $(function(){
+       //保证我们的脚本文件要在DOM解析完毕之后再执行.
+    })
+
+    $() //函数 ，这是函数调用,函数调用返回一个jquery对象
+    $().html() // 调用jquery对象上的html方法(函数)
+    $('#test') //返回一个id为test的HTML元素的jquery对象
+    $('#test').html()  //返回一个id为test的HTML元素的内容(innerHTML)
+</script>

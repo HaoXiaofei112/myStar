@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用的表单事件</title>
+</head>
+<body>
+<form action="/" method="post">
+    用户名:<input type="text">
+    密码:<input type="password">
+    邮箱:<input type="email">
+    <input type="submit" value="提交"> <!--点击按钮触发submit事件-->
+    <input type="reset" value="重置"> <!--点击按钮触发reset事件-->
+</form>
+</body>
+</html>
+<script>
+    var userInput = document.querySelector('input[type=text]');
+    userInput.addEventListener('change',function(){
+        console.log(userInput.value);
+    })
+    userInput.addEventListener('focus',function(){
+        console.log('获取焦点')
+    })
+    userInput.addEventListener('blur',function(){
+        console.log('失去焦点');
+    })
+
+</script>

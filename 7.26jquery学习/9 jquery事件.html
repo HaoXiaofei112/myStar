@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery事件</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div class="box">我来挂载一个click事件</div>
+</body>
+</html>
+<script>
+    $(function(){
+        /*$('div').on('事件名称','事件的回调函数');
+        $('div').on('click',function(){})
+        $('div').off('click') //事件移除
+        //简写方式 ,直接写事件类型
+        $('div').click(function(){
+
+        })*/
+        $('.box').click(function(event){
+            console.log(event);
+            event.preventDefault() //阻止默认行为
+            event.stopImmediatePropagation() //阻止事件冒泡
+        })
+        //$('.box').trigger('click');//主动触发事件
+    })
+</script>

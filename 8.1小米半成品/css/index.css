@@ -1,0 +1,354 @@
+.hide {
+    display:none;
+}
+.show {
+    display:block;
+}
+input {
+    outline: none;
+}
+.border-1 {
+    border:1px solid #ccc;
+}
+/*兼容所有浏览器的清除浮动的方式*/
+.clearfix {
+    overflow: hidden;
+    zoom:1;
+}
+/*伪类清除，在布局的后边设置一个看不见的布局，在它上面挂载清除属性*/
+.clearfix:after {
+    content:'.';
+    visibility:hidden;
+    height:0;
+    clear:both;
+}
+.top {
+    width:100%;
+    height:40px;
+    background: #333;
+    color:rgb(164, 176, 148);
+    font-size:12px;
+}
+.top-left {
+    float:left;
+    margin:12px 0 0 65px;
+}
+.top-left li {
+    float:left;
+    border-right:2px solid #424242;
+    padding:0 6px;
+}
+.top-left li:first-child {
+    padding-left:0;
+}
+.top-left li:last-child {
+    border-right:none;
+}
+.top li a {
+    color:rgb(164, 176, 148);
+}
+.shopCar {
+    position:relative;
+    width:120px;
+    text-align:center;
+    float:right;
+    height:40px;
+    padding:0 14px;
+    line-height:40px;
+    margin-right:61px;
+    background:#424242;
+    box-sizing:border-box;
+}
+.goods {
+    width:300px;
+    height:300px;
+    position:absolute;
+    top:40px;
+    right:61px;
+    box-shadow:0 0 10px #ccc; /*水平距离，垂直距离，模糊距离，阴影大小，发光颜色，内外发光*/
+    text-align:center;
+}
+.top-right {
+    float:right;
+    margin:12px 24px 0 0;
+}
+.top-right li {
+    float:left;
+    border-right:2px solid #424242;
+    padding:0 6px;
+}
+.top-right li:last-child {
+    border-right:none;
+}
+.top-right li:first-child {
+    padding-left:0;
+}
+/*header开始*/
+header {
+    width:1226px;
+    height:100px;
+    margin:0 auto;
+}
+.imgBox {
+    float:left;
+    width:235px;
+    height:100px;
+}
+.imgBox #logo {
+    width:55px;
+    height:55px;
+    float:left;
+    margin-top:22px;
+}
+.imgBox #ad {
+    width:163px;
+    height:66px;
+    float:right;
+    margin-top:17px;
+}
+.nav {
+    float:left;
+    height:100px;
+    line-height:100px;
+}
+.nav li {
+    float:left;
+    padding:0 10px;
+}
+.search {
+    width:297px;
+    height:100px;
+    float:right;
+    padding-top:24px;
+    position:relative;
+}
+.search .ser1 {
+    width:244px;
+    height:50px;
+    float:left;
+    position:relative;
+}
+.search .ser1 .hot{
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    color:rgb(117,117,117);
+}
+.search .ser1 .hot a {
+    font-size:13px;
+    margin-right:5px;
+    background:rgb(238,238,238);
+}
+.search .ser1 input {
+    width:244px;
+    height:50px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+}
+.search .ser2 {
+    width:53px;
+    height:50px;
+    float:left;
+    border:1px solid #ccc;
+    border-left:none;
+    box-sizing:border-box;
+    line-height:50px;
+    text-align:center;
+}
+.search .keywordsList {
+    position:absolute;
+    left:0;
+    top:74px;
+    width:244px;
+    height:auto;
+    border:1px solid #ccc;
+    border-top:none;
+    box-sizing: border-box;
+    padding:0 10px;
+    line-height: 30px;
+    font-size:13px;
+}
+.search .keywordsList span {
+    float:right;
+    color:#ccc;
+}
+/*二级菜单开始*/
+.select {
+    width:100%;
+    height:230px;
+    background:#fff;
+    box-shadow: 0 0 10px #ccc;
+    position:absolute;
+    z-index:1;
+}
+.select ul {
+    width:1226px;
+    height:230px;
+    margin:0 auto;
+}
+.select ul li {
+    float:left;
+    width:203px;
+    height:100px;
+    margin-top:35px;
+    text-align:center;
+    border-right:1px solid #ccc;
+    font-size:14px;
+}
+.select ul li img {
+    width:160px;
+    height:auto;
+}
+.select ul li h4 {
+    line-height:30px;
+}
+.select ul li p {
+    color:orange;
+}
+.select ul li:last-child {
+    border-right:none;
+}
+/*轮播图*/
+.main {
+    width:1226px;
+    margin:0 auto;
+}
+.banner {
+    width:1226px;
+    height:460px;
+    position:relative;
+    overflow:hidden;
+    cursor: pointer;
+}
+.banner > img {
+    width:1226px;
+    height:460px;
+}
+.navL {
+    width:235px;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    position:absolute;
+    left:0;
+    top:0;
+}
+.navL li {
+    width:100%;
+    height:42px;
+    line-height:42px;
+    font-size:12px;
+}
+.navL li:first-child {
+    margin-top:20px;
+}
+.navL li a {
+    color:#fff;
+    margin-left:25px;
+}
+.navL li a span {
+    float:right;
+    margin-right:28px;
+}
+.navHide {
+    height:460px;
+    position:absolute;
+    left:235px;
+    top:0;
+    z-index:10;
+}
+.navHide .ulHide {
+    background:white;
+    position:absolute;
+    left:0;
+    top:0;
+    height:460px;
+    box-shadow:0 0 1px #ccc;
+}
+.navHide .ulHide1{
+    width: 266px;
+}
+.navHide .ulHide2{
+    width: 532px;/*background: red;*/
+}
+.navHide .ulHide3{
+    width: 798px;/*background: cyan;*/
+}
+.navHide .ulHide li {
+    width:266px;
+    height:76px;
+    position:relative;
+    float:left;
+}
+.navHide .ulHide li img {
+    width:40px;
+    height:40px;
+    position:absolute;
+    top:calc(50% - 20px);
+    left:20px;
+}
+.navHide .ulHide li p {
+    position:absolute;
+    top:calc(50% - 8px);
+    left:70px;
+    font-size:12px;
+}
+.navHide .ulHide li div.buy {
+    width:58px;
+    height:22px;
+    line-height:22px;
+    text-align:center;
+    font-size:12px;
+    position:absolute;
+    top:calc(50% - 15px);
+    right:10px;
+    border:1px solid orange;
+    color:orange;
+}
+.banner .round {
+    width:100px;
+    height:10px;
+    position:absolute;
+    right:35px;
+    bottom:25px;
+    z-index:10;
+}
+.banner .round li {
+    width:10px;
+    height:10px;
+    float:left;
+    border-radius: 50%;
+    background:#342416;
+    margin-left:10px;
+    opacity:0.8;
+}
+.banner .round li:first-child {
+    background:orange;
+    opacity:0.8;
+}
+.banner .direc {
+    width:41px;
+    height:69px;
+    position:absolute;
+    font-size:36px;
+    color:#fff;
+    top:50%;
+    text-align:center;
+    line-height:69px;
+    z-index:10;
+    user-select: none; /*当前文本不被选中*/
+}
+.banner .direc:hover {
+    background:#000;
+    opacity:0.5;
+}
+.banner .direcL {
+    left:235px;
+}
+.banner .direcR {
+    right:0;
+}
+
+
+
+
+

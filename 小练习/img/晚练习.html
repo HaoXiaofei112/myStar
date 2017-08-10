@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            font-size:16px;
+            font-family: "Microsoft Yi Baiti";
+        }
+        ul,ol,dl,li{
+            list-style: none;
+        }
+        a,a:hover{
+            text-decoration: none;
+        }
+        #wrapper{
+            width:500px;
+            height: auto;
+            margin: 10px auto;
+            text-align: center;
+        }
+        #wrapper  button{
+            padding:3px;
+            border: 1px solid #000;
+
+        }
+        #box{
+            width: 220px;
+            height: 220px;
+            margin: 10px auto;
+            background: black;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <button type="button">变宽</button>
+    <button type="button">变高</button>
+    <button type="button">变色</button>
+    <button type="button">隐藏</button>
+    <button type="button">重置</button>
+
+    <div id="box"></div>
+</div>
+</body>
+</html>
+<script>
+  window.onmousemove=function () {
+      var div = document.querySelector('#box');
+      var width = document.querySelector('button:nth-of-type(1)');
+      var height = document.querySelector('button:nth-of-type(2)');
+      var color = document.querySelector('button:nth-of-type(3)');
+      var hidden = document.querySelector('button:nth-of-type(4)');
+      var reset = document.querySelector('button:nth-of-type(5)');
+         width.addEventListener('click',function () {
+             div.style.width = 300 + 'px';
+         })
+      height.addEventListener('click',function () {
+          div.style.height = 300 + 'px';
+      })
+      color.addEventListener('click',function () {
+          div.style.background =  'red';
+      })
+      hidden.addEventListener('click',function () {
+          div.style.width =  0 + 'px';
+      })
+     reset.addEventListener('click',function () {
+          div.style=  null;
+      })
+
+
+
+  }
+
+</script>

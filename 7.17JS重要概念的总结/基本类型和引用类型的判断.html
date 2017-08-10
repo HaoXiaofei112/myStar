@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本类型和引用类型的判断</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //基本类型的判断
+    var num = 10;//number类型
+    console.log(typeof num);
+    var str = 'string';//string类型
+    console.log(typeof str);
+    var bool = true;
+    console.log(typeof bool) //boolean类型
+    var test;
+    console.log(typeof test);//undefined类型
+    var box = null;
+    console.log(typeof box);//null类型
+
+    //引用类型的判断
+    var obj = new Object();// 对象类型
+    console.log(obj instanceof Object);
+    var arr = [1,2,3,4];
+    console.log(arr instanceof Array);//数组类型
+    var fn = function(){};
+    console.log(fn instanceof Function);//函数类型
+    var reg = new RegExp();
+    console.log(reg instanceof RegExp);//正则类型
+    var date = new Date();
+    console.log(date instanceof Date);//日期类型
+    var error = new Error();
+    console.log(error instanceof Error);//错误类型
+
+
+
+
+
+</script>

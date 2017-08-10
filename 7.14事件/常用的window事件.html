@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用的window事件</title>
+    <style type="text/css">
+        div{width:768px;}
+        ul{list-style:none;}
+        ul li{overflow:hidden;zoom:1;border-bottom:1px dashed #dfdfdf;font-size:12px;}
+        ul li .name{float:left;width:100px;height:22px;padding-top:15px;font-weight:bold;text-align:right;}
+        ul li .intro{float:left;width:620px;padding-top:15px;}
+        ul li .intro a{display:inline-block;margin:0 10px 20px 0;color:#3366cc;text-decoration:none;}
+        ul li .intro a:hover,{color:#fff;background:#3399cc;}
+        ul li.chosed .intro span{display:none;margin-left:10px;padding:5px 5px 5px 5px;background:none;color:#ff6600;border:1px solid #ff6600;}
+        ul li.chosed .intro span em{display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;background:#ff6600;color:#fff;font-size:14px;font-weight:bold;font-style:normal;cursor:pointer;}
+        ul li.chosed .intro a.clear{margin-left:10px;background:none;color:#ff6600;font-weight:bold;border:none;}
+        .selected{color:#fff;background:#3399cc;}
+    </style>
+</head>
+<body style="height:2000px;">
+<div>
+    <ul>
+        <li><span class="name">品　　牌：</span><span class="intro">
+				<a href="#">苹果</a>
+				<a href="#">小米</a>
+				<a href="#">华为</a>
+				<a href="#">联想</a>
+				<a href="#">中兴</a>
+				<a href="#">夏新</a>
+				<a href="#">海信</a>
+				<a href="#">酷派</a>
+				<a href="#">DELL</a>
+				<a href="#">HTC</a>
+				<a href="#">索尼</a>
+				<a href="#">索尼爱立信</a>
+				<a href="#">三星</a>
+				<a href="#">诺基亚</a>
+				<a href="#">海尔</a>
+				<a href="#">TCL</a>
+				<a href="#">飞利浦</a>
+				<a href="#">摩托罗拉</a>
+				<a href="#">黑莓</a>
+				<a href="#">LG</a>
+				<a href="#">爱国者</a>
+				<a href="#">天语</a>
+				<a href="#">英华达</a>
+				<a href="#">长虹</a>
+				<a href="#">万利达</a>
+			</span></li>
+        <li><span class="name">价格范围：</span><span class="intro">
+				<a href="#">1-499</a>
+				<a href="#">500-999</a>
+				<a href="#">1000-1999</a>
+				<a href="#">2000-2999</a>
+				<a href="#">3000-4999</a>
+				<a href="#">5000以上</a>
+			</span></li>
+        <li><span class="name">操作系统：</span><span class="intro">
+				<a href="#">iOS</a>
+				<a href="#">安卓</a>
+				<a href="#">塞班</a>
+				<a href="#">百度易平台</a>
+			</span></li>
+        <li><span class="name">优惠活动：</span><span class="intro">
+				<a href="#">存话费送手机</a>
+				<a href="#">买手机送话费</a>
+				<a href="#">老用户优惠购机（支持合约到期提前续约）</a>
+				<a href="#">只买手机</a>
+				<a href="#">分期付款</a>
+			</span></li>
+        <li><span class="name">特　　点：</span><span class="intro">
+				<a href="#">双卡双待</a>
+				<a href="#">千元智能机</a>
+				<a href="#">大屏（4.0寸以上）</a>
+			</span></li>
+        <li class="chosed" id="chosed"><span class="name">您已选择：</span><span class="intro">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+            <!-- <a href="#" class="clear">清除筛选条件</a> -->
+			</span></li>
+    </ul>
+</div>
+<img src="http://pic.qiantucdn.com/58pic/26/95/56/63858PICcgw_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center">
+<img src="http://pic.qiantucdn.com/58pic/26/95/56/63858PICcgw_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center">
+<img src="http://pic.qiantucdn.com/58pic/26/95/56/63858PICcgw_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center">
+<img src="http://pic.qiantucdn.com/58pic/26/95/56/63858PICcgw_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center">
+<img src="http://pic.qiantucdn.com/58pic/26/95/56/63858PICcgw_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center">
+<img src="http://pic.qiantucdn.com/58pic/26/95/56/63858PICcgw_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center">
+<img src="http://pic.qiantucdn.com/58pic/26/95/56/63858PICcgw_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center">
+<img src="http://pic.qiantucdn.com/58pic/26/95/56/63858PICcgw_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center">
+<img src="http://pic.qiantucdn.com/58pic/26/95/56/63858PICcgw_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center">
+<img src="http://pic.qiantucdn.com/58pic/26/95/56/63858PICcgw_1024.jpg!/fw/780/watermark/url/L3dhdGVybWFyay12MS4zLnBuZw==/align/center">
+
+</body>
+</html>
+<script>
+    /*window.addEventListener('resize',function(){
+        alert('窗口大小被改变了');
+    })
+    window.addEventListener('scroll',function(){
+        alert('滚动条的位置发生变化了');
+    })*/
+
+    window.addEventListener('DOMContentLoaded',function(){
+        alert('所有的标签加载完毕');//解析DOM完毕的时候,html标签被解析完毕的时候
+    })
+    window.addEventListener('load',function(){
+        alert('所有的资源加载完毕');//所有的资源加载完毕的时候
+    })
+
+
+
+</script>

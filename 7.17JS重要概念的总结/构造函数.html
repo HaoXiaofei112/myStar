@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*var dog = {
+        category:'犬科',
+        say:function(){
+            console.log('汪汪汪');
+        }
+    }
+    function copy(dog){
+        var obj = {};
+        for(key in dog){
+            obj[key] = dog[key]
+        }
+        return obj;
+    }
+    var daMao = copy(dog);*/
+    //非构造函数的复制.
+
+    //构造函数
+    function dog(){
+        //构造函数中有一个this对象.this指向构造函数本身.
+        //var this = {};
+        this.category = '犬科';
+        this.say = function(){
+            console.log('汪汪汪');
+        }
+        //return this;
+    }
+    var daMao = new dog();
+    console.log(daMao);
+    var erMao = new dog();
+    console.log(erMao);
+
+
+
+
+
+
+
+</script>

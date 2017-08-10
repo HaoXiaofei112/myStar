@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        section{
+            width: 490px;
+            /*height: 500px;*/
+            margin: 20px auto;
+            border: 8px solid white;
+            border-radius: 10px;
+            position: relative;
+            background-color: white;
+
+
+        }
+        ul{
+            position: absolute;
+            bottom:0px;
+            right:20px;
+            margin: 10px 0;
+        }
+        li{
+            width:25px;
+            height: 25px;
+            list-style: none;
+            float: left;
+            margin-left: 10px;
+            line-height: 25px;
+            border-radius: 50%;
+            background-color: orange;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <img src="img/01.jpg" alt="。。。" style="display: inline-block">
+        <ul>
+            <li style="background-color: red"><strong>1</strong></li>
+            <li><strong>2</strong></li>
+            <li><strong>3</strong></li>
+            <li><strong>4</strong></li>
+            <li><strong>5</strong></li>
+            <div style="clear: both"></div>
+        </ul>
+    </section>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        var time = setInterval(abb,1000);
+        var img = document.querySelector('img');
+        var allLi = document.querySelectorAll('li');
+        var section= document.querySelector('section');
+        var i = 0;
+        var j = 0;
+        var turn = false;
+
+        function abb() {
+            if(j<4){
+                j++;
+                allLi[j-1].style.backgroundColor = 'orange';
+                allLi[j].style.backgroundColor = 'red';
+
+            }else {
+                j =0;
+                allLi[0].style.backgroundColor = 'red';
+                allLi[4].style.backgroundColor = 'orange';
+
+            }
+            if(i<4){
+                i++;
+                img.src = 'img/0' + (i+1) +'.jpg';
+            }else{
+
+                img.src = 'img/01.jpg';
+                i=0;
+
+            }
+            section.onmousemove =function () {
+                if(turn == false){
+                    clearInterval(time);
+                    time = null;
+                    turn = true;
+                }else{
+                    time = setInterval(abb,1000);
+                    turn = false;
+                }
+             }
+            section.onmousout =function () {
+                if(turn == true){
+                    clearInterval(time);
+                time = null;
+                turn = false;
+            }else{
+                time = setInterval(abb,1000);
+                turn = true;
+            }
+            }
+
+
+
+
+        }
+
+
+
+    }
+
+
+</script>
